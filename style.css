@@ -1,0 +1,398 @@
+/* Reset Margin & Font Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background Dark Maroon sesuai desain */
+body {
+    background-color: #1a0505;
+    color: #ffffff;
+}
+
+/* --- Navigasi --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d0a0a;
+    padding: 15px 40px;
+    border-bottom: 2px solid #5a1010;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e60000; /* Merah terang */
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 30%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    color: black;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e60000;
+}
+
+.btn-masuk {
+    background-color: #e60000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Banner --- */
+/* --- Banner Slider (Centered / Carousel Mengintip) --- */
+/* --- Banner Slider (3D Infinite Carousel) --- */
+.banner-slider {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0; /* Memberi ruang agar saat membesar tidak terpotong */
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab; /* Kursor berubah jadi tangan terbuka */
+}
+
+/* Saat slider sedang diklik/ditahan */
+.slider-container:active {
+    cursor: grabbing; /* Kursor berubah jadi tangan menggenggam */
+}
+
+
+
+.slide {
+    position: absolute;
+    width: 55%; /* Lebar banner utama */
+    transition: all 0.5s ease-in-out;
+    opacity: 0; /* Sembunyikan banner jika jumlahnya lebih dari 3 */
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    aspect-ratio: 808 / 271;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #3d0a0a;
+    display: block;
+    
+    /* Mencegah gambar biru tersorot atau ikut terseret oleh browser */
+    user-select: none;
+    -webkit-user-drag: none; 
+}
+
+/* Banner yang di tengah (Aktif) */
+.slide.active {
+    opacity: 1;
+    transform: translateX(0) scale(1.05); /* Posisinya pas di tengah dan membesar */
+    z-index: 3;
+}
+
+.slide.active img {
+    border-color: #e60000;
+    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.5);
+}
+
+/* Banner yang mengintip di Kiri (Prev) */
+.slide.prev {
+    opacity: 0.4;
+    transform: translateX(-100%) scale(0.9); /* Geser ke kiri dan mengecil */
+    z-index: 2;
+}
+
+/* Banner yang mengintip di Kanan (Next) */
+.slide.next {
+    opacity: 0.4;
+    transform: translateX(100%) scale(0.9); /* Geser ke kanan dan mengecil */
+    z-index: 2;
+}
+
+/* Efek khusus untuk banner aktif yang berada di tengah */
+.slide.active img {
+    opacity: 1; /* Banner tengah terang benderang */
+    transform: scale(1.03); /* Sedikit membesar agar dominan */
+    border-color: #e60000; /* Border merah menyala */
+    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.4); /* Efek glow merah tipis */
+}
+
+/* --- Navigasi Dots --- */
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #5a1010; /* Merah gelap untuk yang tidak aktif */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Dot yang sedang aktif */
+.dot.active {
+    background-color: #e60000; /* Merah terang */
+    width: 25px; /* Sedikit memanjang agar lebih keren */
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(230, 0, 0, 0.8);
+}
+
+/* --- Area Konten Utama --- */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.section {
+    margin-top: 40px;
+}
+
+/* --- Modifikasi Area Judul & Pita (Ribbon) --- */
+/* --- Modifikasi Pita Panjang (Full Ribbon) --- */
+.section-title {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+/* --- Modifikasi Pita Panjang Pakai Gambar Sendiri --- */
+/* --- Modifikasi Pita Panjang Pakai Gambar Sendiri --- */
+.ribbon-banner {
+    background-image: url('images/pita.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    display: flex;
+    align-items: center;
+    /* Perhatikan padding kiri saya ubah jadi 70px agar teks Flash Sale mundur dan tidak tertutup petir */
+    padding: 15px 30px 15px 70px; 
+    width: 100%;
+    position: relative; /* Menjadi jangkar untuk petir */
+}
+
+/* Desain Ikon Petir (Dibuat Melayang/Menimpa) */
+.ribbon-icon {
+    position: absolute;
+    left: -15px; /* Geser petir sedikit ke luar pita di sebelah kiri */
+    top: 50%; 
+    transform: translateY(-55%); /* Mengunci posisi petir persis di tengah-tengah secara vertikal */
+    
+    width: 120px; /* Nah, sekarang kamu bebas membesarkan angka ini sampai puas */
+    height: auto;
+    z-index: 10; /* Memastikan petir selalu berada di lapisan paling depan (menimpa pita) */
+    
+    filter: drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.4));
+}
+
+/* Teks Flash Sale */
+.ribbon-text {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    margin-left: 25px;
+}
+
+/* Desain Timer Kapsul di Dalam Pita */
+.ribbon-timer {
+    background: linear-gradient(to right, #ff9900, #ffcc00); /* Gradasi oranye ke kuning */
+    color: #ffffff; /* Teks timer berwarna putih sesuai gambar */
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 25px;
+    border-radius: 20px; /* Bentuk kapsul */
+    letter-spacing: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Flash Sale Cards --- */
+/* --- Wadah Produk Flash Sale (Scroll Horizontal) --- */
+/* --- Wadah Produk Flash Sale (Scroll Horizontal) --- */
+.grid-flash {
+    display: flex;
+    gap: 20px;
+    /* overflow-x mengizinkan wadah untuk discroll ke samping */
+    overflow-x: auto; 
+    padding-top: 20px;
+    padding-bottom: 25px; /* Memberi sedikit jarak di bawah agar kotak tidak terpotong bayangannya */
+    cursor: grab; /* Kursor berubah jadi tangan terbuka */
+    scroll-behavior: smooth;
+    
+    /* Menyembunyikan scrollbar bawaan agar rapi seperti di HP */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Menyembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+.grid-flash::-webkit-scrollbar {
+    display: none;
+}
+
+/* Saat wadah sedang diklik/ditahan */
+.grid-flash:active {
+    cursor: grabbing; /* Kursor tangan menggenggam */
+}
+
+.card-flash-img {
+    width: 350px; 
+    /* flex: 0 0 auto SANGAT PENTING: Mencegah kotak menyusut tertekan kotak lainnya */
+    flex: 0 0 auto; 
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Mencegah gambar ikut tertarik oleh browser saat mouse digeser */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.card-flash-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    /* Mematikan fungsi seret bawaan pada gambar */
+    pointer-events: none; 
+}
+
+.card-flash-img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(230, 0, 0, 0.5);
+}
+
+.card-flash {
+    background-color: #3d0a0a;
+    border: 1px solid #5a1010;
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 280px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card-flash:hover {
+    transform: translateY(-5px);
+    border-color: #e60000;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.info .game {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.info .item {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.info .price {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* --- Beli Akun Cards --- */
+.grid-kategori {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card-kategori {
+    background-color: #3d0a0a;
+    border: 1px solid #5a1010;
+    border-radius: 10px;
+    width: calc(20% - 12px); /* Dibagi rata 5 kolom */
+    overflow: hidden;
+    text-align: center;
+    transition: border 0.3s;
+    cursor: pointer;
+}
+
+.card-kategori:hover {
+    border-color: #e60000;
+}
+
+.img-box {
+    height: 180px;
+    background-color: #2a0505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.card-kategori p {
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

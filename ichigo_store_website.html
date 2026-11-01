@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICHIGOSTORE - TopUp & Jual Akun</title>
+    <!-- Menyambungkan ke CSS murni -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Bagian Navigasi -->
+    <nav class="navbar">
+        <div class="logo">ICHIGOSTORE</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari produk di sini...">
+            <button>🔍</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produk</a></li>
+            <li><a href="#">Riwayat</a></li>
+            <li><a href="#">Jual Akun</a></li>
+            <li><button class="btn-masuk">Masuk</button></li>
+        </ul>
+    </nav>
+
+    <!-- Bagian Banner Utama -->
+    <!-- Bagian Banner Utama (Slider) -->
+    <header class="banner-slider">
+        <div class="slider-container" id="sliderContainer">
+            <!-- Ganti src="..." dengan nama file gambarmu nanti, contoh: "banner1.jpg" -->
+            <div class="slide active">
+                <img src="images/banner1.jpg" alt="Banner 1">
+            </div>
+            <div class="slide active">
+                <img src="images/banner2.jpg" alt="Banner 2">
+            </div>
+            <div class="slide active">
+                <img src="images/banner3.jpg" alt="Banner 3">
+            </div>
+        </div>
+        <div class="dots-container" id="dotsContainer">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Bagian Flash Sale -->
+        <!-- Bagian Flash Sale -->
+        <section class="section">
+            <div class="section-title">
+                <div class="ribbon-banner">
+                    <!-- Memanggil gambar petir milikmu -->
+                    <img src="images/petir.png" alt="Petir" class="ribbon-icon">
+                    
+                    <span class="ribbon-text">Flash Sale</span>
+                    <span class="ribbon-timer" id="countdown">23:59:59</span>
+                </div>
+            </div>
+            
+            <div class="grid-flash">
+                <!-- Kotak Produk 1 Menggunakan Gambar Full -->
+                <div class="card-flash-img">
+                    <!-- Ganti "gambar-flash-1.png" dengan nama file gambarmu yang sebenarnya -->
+                    <img src="images/sale1.png" alt="Promo Flash Sale 1">
+                </div>
+                
+                <!-- Kotak Produk 2 Menggunakan Gambar Full -->
+                <div class="card-flash-img">
+                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
+                    <img src="images/sale2.png" alt="Promo Flash Sale 2">
+                </div>
+                
+                <!-- Kalau ada 3 atau 4 produk, tinggal copy-paste blok div "card-flash-img" di atas -->
+                 <div class="card-flash-img">
+                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
+                    <img src="images/sale3.png" alt="Promo Flash Sale 2">
+                </div>
+                <div class="card-flash-img">
+                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
+                    <img src="images/sale4.png" alt="Promo Flash Sale 2">
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Beli Akun -->
+        <section class="section">
+            <div class="section-title">
+                <span class="badge">👤 Beli Akun</span>
+            </div>
+            
+            <div class="grid-kategori">
+                <div class="card-kategori">
+                    <div class="img-box">OPBR</div>
+                    <p>One Piece Bounty Rush</p>
+                </div>
+                <div class="card-kategori">
+                    <div class="img-box">MLBB</div>
+                    <p>Mobile Legends</p>
+                </div>
+                <div class="card-kategori">
+                    <div class="img-box">FF</div>
+                    <p>Free Fire</p>
+                </div>
+                <div class="card-kategori">
+                    <div class="img-box">VALO</div>
+                    <p>Valorant</p>
+                </div>
+                <div class="card-kategori">
+                    <div class="img-box">PUBGM</div>
+                    <p>PUBG Mobile</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Menyambungkan ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
