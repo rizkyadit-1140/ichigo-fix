@@ -466,7 +466,7 @@ main {
 
 /* 3. Desain Kotak Gambar Produk Akun */
 .card-akun-img {
-    width: 200px; /* Atau berapapun angka yang tadi sudah pas */
+    width: 250px; /* Atau berapapun angka yang tadi sudah pas */
     flex: 0 0 auto;
     height: auto;
     transition: transform 0.3s ease, filter 0.3s ease; /* Transisi diubah ke filter */
@@ -485,6 +485,101 @@ main {
 }
 
 .card-akun-img:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
+}
+
+/* ============================== */
+/* MODIFIKASI BAGIAN TOP UP GAME  */
+/* ============================== */
+
+/* 1. Gambar Banner Pita Top Up Utuh */
+.ribbon-topup-full {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* 2. Area Grid Top Up (Bentuk Katalog Tersusun) */
+.grid-topup {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Sangat penting: Memaksa produk turun ke baris baru jika mentok */
+    justify-content: flex-start; /* Menyusun rapi dari kiri ke kanan */
+    padding-bottom: 25px;
+}
+
+/* 3. Desain Kotak Gambar Produk Top Up */
+.card-topup-img {
+    /* Lebar kotak disetel 160px agar muat banyak berjejer. 
+       Silakan dibesarkan/dikecilkan sesuai bentuk gambar game kamu */
+    width: 260px; 
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.card-topup-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+/* Efek saat mouse mengarah ke gambar produk (pakai jurus bayangan presisi) */
+.card-topup-img:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
+}
+/* ============================== */
+/* MODIFIKASI BAGIAN JOKI GAME    */
+/* ============================== */
+
+/* 1. Gambar Banner Pita Joki Utuh */
+.ribbon-joki-full {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* 2. Area Grid Joki (Bentuk Katalog Tersusun) */
+.grid-joki {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Memaksa produk turun ke baris baru jika layar sempit */
+    justify-content: flex-start; 
+    padding-bottom: 25px;
+}
+
+/* 3. Desain Kotak Gambar Produk Joki */
+.card-joki-img {
+    /* Samakan angka lebar ini dengan produk Top Up (misal 160px) 
+       atau sesuaikan sendiri jika gambar joki-mu ukurannya berbeda */
+    width: 280px; 
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.card-joki-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+/* Efek saat mouse mengarah ke gambar produk joki */
+.card-joki-img:hover {
     transform: translateY(-8px);
     filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
 }
