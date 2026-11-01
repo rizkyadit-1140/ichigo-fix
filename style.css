@@ -263,21 +263,41 @@ main {
 .grid-flash {
     display: flex;
     gap: 20px;
-    /* overflow-x mengizinkan wadah untuk discroll ke samping */
     overflow-x: auto; 
-    padding-top: 20px;
-    padding-bottom: 25px; /* Memberi sedikit jarak di bawah agar kotak tidak terpotong bayangannya */
-    cursor: grab; /* Kursor berubah jadi tangan terbuka */
+    padding-top: 20px; 
+    padding-bottom: 25px; 
+    cursor: grab;
     scroll-behavior: smooth;
     
-    /* Menyembunyikan scrollbar bawaan agar rapi seperti di HP */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* GANTI BAGIAN INI: Mengaktifkan dan mewarnai scrollbar untuk browser Firefox */
+    scrollbar-width: thin; 
+    scrollbar-color: #cc0000 #3d0a0a; 
 }
 
-/* Menyembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+/* --- Navigasi Geser (Scrollbar) Custom Keren --- */
+
+/* 1. Menentukan ketebalan navigasi geser */
 .grid-flash::-webkit-scrollbar {
-    display: none;
+    height: 10px; /* Ukuran tinggi garis geser di bawah produk */
+}
+
+/* 2. Jalur tempat navigasi bergeser (Track) */
+.grid-flash::-webkit-scrollbar-track {
+    background: #3d0a0a; /* Merah sangat gelap (maroon tua) */
+    border-radius: 10px;
+}
+
+/* 3. Tombol/garis yang bisa ditarik (Thumb) */
+.grid-flash::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #cc0000, #ff1a1a); /* Gradasi merah */
+    border-radius: 10px;
+    /* Sedikit bayangan di dalam agar terlihat 3D */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+/* 4. Efek saat garis geser disentuh mouse */
+.grid-flash::-webkit-scrollbar-thumb:hover {
+    background: #ff3333; /* Berubah jadi merah terang saat disentuh */
 }
 
 /* Saat wadah sedang diklik/ditahan */
@@ -395,4 +415,76 @@ main {
     padding: 15px;
     font-size: 0.9rem;
     font-weight: bold;
+}
+
+/* ============================== */
+/* MODIFIKASI BAGIAN BELI AKUN    */
+/* ============================== */
+
+/* 1. Desain Pita & Logo/Teks Gambar */
+/* ============================== */
+/* MODIFIKASI BAGIAN BELI AKUN    */
+/* ============================== */
+
+/* 1. Gambar Banner Pita Beli Akun Utuh */
+.ribbon-akun-full {
+    width: 100%; /* Agar panjang gambarnya membentang menyesuaikan layar */
+    max-width: none; /* Opsional: batas maksimal panjang gambar agar tidak pecah di layar super besar */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 20px; /* Jarak antara gambar pita dan kotak produk di bawahnya */
+    
+    /* Efek bayangan ringan agar pitanya terlihat menonjol (hapus baris ini kalau gambarmu sudah ada efek bayangannya sendiri) */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4)); 
+}
+/* 2. Area Grid Geser Beli Akun */
+.grid-akun {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    cursor: grab;
+    scroll-behavior: smooth;
+    
+    /* Warna navigasi geser bawah */
+    scrollbar-width: thin;
+    scrollbar-color: #cc0000 #3d0a0a;
+}
+
+/* Kustomisasi Navigasi Geser (Scrollbar) */
+.grid-akun::-webkit-scrollbar { height: 10px; }
+.grid-akun::-webkit-scrollbar-track { background: #3d0a0a; border-radius: 10px; }
+.grid-akun::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.grid-akun::-webkit-scrollbar-thumb:hover { background: #ff3333; }
+.grid-akun:active { cursor: grabbing; }
+
+/* 3. Desain Kotak Gambar Produk Akun */
+.card-akun-img {
+    width: 200px; /* Atau berapapun angka yang tadi sudah pas */
+    flex: 0 0 auto;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transisi diubah ke filter */
+    user-select: none;
+    -webkit-user-drag: none;
+    
+    /* border-radius dan overflow: hidden dihapus agar drop-shadow bisa menyebar bebas */
+}
+
+.card-akun-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+}
+
+.card-akun-img:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
 }

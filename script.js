@@ -145,39 +145,38 @@ let isDownFlash = false;
 let startXFlash;
 let scrollLeftFlash;
 
-// Saat klik ditekan di area produk
-flashGrid.addEventListener('mousedown', (e) => {
-    isDownFlash = true;
-    // Mencatat posisi awal klik mouse dan posisi awal scroll
-    startXFlash = e.pageX - flashGrid.offsetLeft;
-    scrollLeftFlash = flashGrid.scrollLeft;
-    
-    // Mematikan smooth scroll sementara saat ditarik manual agar lebih responsif
-    flashGrid.style.scrollBehavior = 'auto';
-});
+// --- Deteksi Geser (Drag to Scroll) Untuk Semua Area Produk ---
+// Mencari semua area yang punya class .grid-flash atau .grid-akun
+const scrollAreas = document.querySelectorAll('.grid-flash, .grid-akun');
 
-// Saat kursor mouse keluar dari area produk
-flashGrid.addEventListener('mouseleave', () => {
-    isDownFlash = false;
-    flashGrid.style.scrollBehavior = 'smooth';
-});
+scrollAreas.forEach(area => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-// Saat klik dilepas
-flashGrid.addEventListener('mouseup', () => {
-    isDownFlash = false;
-    flashGrid.style.scrollBehavior = 'smooth';
-});
+    area.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - area.offsetLeft;
+        scrollLeft = area.scrollLeft;
+        area.style.scrollBehavior = 'auto';
+    });
 
-// Saat mouse digeser (kondisi menahan klik)
-flashGrid.addEventListener('mousemove', (e) => {
-    if (!isDownFlash) return; // Jika tidak sedang diklik, batalkan
-    e.preventDefault(); // Mencegah blok teks biru
-    
-    // Menghitung jarak geseran mouse
-    const x = e.pageX - flashGrid.offsetLeft;
-    const walk = (x - startXFlash) * 1.5; // Angka 1.5 adalah sensitivitas/kecepatan geser
-    
-    // Menerapkan jarak geseran ke posisi scroll wadah
-    flashGrid.scrollLeft = scrollLeftFlash - walk;
+    area.addEventListener('mouseleave', () => {
+        isDown = false;
+        area.style.scrollBehavior = 'smooth';
+    });
+
+    area.addEventListener('mouseup', () => {
+        isDown = false;
+        area.style.scrollBehavior = 'smooth';
+    });
+
+    area.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - area.offsetLeft;
+        const walk = (x - startX) * 1.5; // Sensitivitas geser
+        area.scrollLeft = scrollLeft - walk;
+    });
 });
 });
