@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beli Akun Valorant - Ichigo Store</title>
+    <link rel="stylesheet" href="style.css"> <!-- Tetap pakai CSS yang sama -->
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
+    <!-- ========================================== -->
+    
+    <!-- Wadah Utama Halaman Katalog Akun -->
+    <div class="container-akun-katalog">
+        
+        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
+        <!-- ============================== -->
+        <aside class="sidebar-filter">
+            <h3>Filter</h3>
+            
+            <div class="filter-group">
+                <label>Rank Tertinggi</label>
+                <select>
+                    <option>Pilih Rank Tertinggi</option>
+                    <option>Radiant / Immortal</option>
+                    <option>Ascendant</option>
+                    <option>Diamond / Platinum</option>
+                    <option>Gold ke Bawah (Smurf)</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Harga Minimal</label>
+                <div class="input-rp">
+                    <span>Rp</span>
+                    <input type="number" placeholder="">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Harga Maksimal</label>
+                <div class="input-rp">
+                    <span>Rp</span>
+                    <input type="number" placeholder="">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Urutkan Harga</label>
+                <div class="radio-group">
+                    <input type="radio" id="termurah" name="urutkan">
+                    <label for="termurah">Termurah Ke Termahal</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="termahal" name="urutkan">
+                    <label for="termahal">Termahal Ke Termurah</label>
+                </div>
+            </div>
+
+            <button class="btn-filter">Filter</button>
+            <button class="btn-reset">Reset Filter</button>
+        </aside>
+
+        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
+        <!-- ============================== -->
+        <main class="content-akun">
+            
+            <!-- Pencarian -->
+            <div class="search-akun-bar">
+                <input type="text" placeholder="Cari Vandal Kuronami, Reaver, Champions dll">
+                <button>Cari</button>
+            </div>
+
+            <!-- Grid Produk Akun -->
+            <div class="grid-katalog-akun">
+                
+                <!-- Kotak Akun Valo 1 -->
+                <div class="card-katalog-item">
+                    <!-- Ganti src dengan gambar akun Valo dari komputermu -->
+                    <img src="akun-valo-1.jpg" alt="Akun Valorant"> 
+                    <div class="card-katalog-info">
+                        <h4>Bundle Kuronami | Vandal Reaver | Knife Champions 2024</h4>
+                        <p class="harga-coret">Rp 1.500.000</p>
+                        <p class="harga-asli">Rp 1.350.000</p>
+                    </div>
+                </div>
+
+                <!-- Kotak Akun Valo 2 -->
+                <div class="card-katalog-item">
+                    <img src="akun-valo-2.jpg" alt="Akun Valorant">
+                    <div class="card-katalog-info">
+                        <h4>Vandal Araxys | Phantom Oni | RGX Blade | Full Agent</h4>
+                        <p class="harga-coret">Rp 800.000</p>
+                        <p class="harga-asli">Rp 749.999</p>
+                    </div>
+                </div>
+
+                <!-- Kotak Akun Valo 3 -->
+                <div class="card-katalog-item">
+                    <img src="akun-valo-3.jpg" alt="Akun Valorant">
+                    <div class="card-katalog-info">
+                        <h4>Akun Smurf | Vandal Prime | Battlepass Max S9</h4>
+                        <p class="harga-coret">Rp 250.000</p>
+                        <p class="harga-asli">Rp 199.999</p>
+                    </div>
+                </div>
+
+                <!-- Tambahkan kotak lainnya sesuai stok akun Valorant yang kamu miliki -->
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

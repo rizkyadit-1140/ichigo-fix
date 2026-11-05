@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beli Akun OPBR - Ichigo Store</title>
+    <link rel="stylesheet" href="style.css"> <!-- Tetap menggunakan CSS yang sama -->
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
+    <!-- ========================================== -->
+    
+    <!-- Wadah Utama Halaman Katalog Akun -->
+    <div class="container-akun-katalog">
+        
+        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
+        <!-- ============================== -->
+        <aside class="sidebar-filter">
+            <h3>Filter</h3>
+            
+            <div class="filter-group">
+                <label>League Tertinggi</label>
+                <select>
+                    <option>Pilih League Tertinggi</option>
+                    <option>SS League</option>
+                    <option>S+ League</option>
+                    <option>S League</option>
+                    <option>A- ke Bawah (Starter)</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Harga Minimal</label>
+                <div class="input-rp">
+                    <span>Rp</span>
+                    <input type="number" placeholder="">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Harga Maksimal</label>
+                <div class="input-rp">
+                    <span>Rp</span>
+                    <input type="number" placeholder="">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label>Urutkan Harga</label>
+                <div class="radio-group">
+                    <input type="radio" id="termurah" name="urutkan">
+                    <label for="termurah">Termurah Ke Termahal</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="termahal" name="urutkan">
+                    <label for="termahal">Termahal Ke Termurah</label>
+                </div>
+            </div>
+
+            <button class="btn-filter">Filter</button>
+            <button class="btn-reset">Reset Filter</button>
+        </aside>
+
+        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
+        <!-- ============================== -->
+        <main class="content-akun">
+            
+            <!-- Pencarian -->
+            <div class="search-akun-bar">
+                <input type="text" placeholder="Cari Karakter EX, Bounty Fest, RDS dll">
+                <button>Cari</button>
+            </div>
+
+            <!-- Grid Produk Akun -->
+            <div class="grid-katalog-akun">
+                
+                <!-- Kotak Akun OPBR 1 -->
+                <div class="card-katalog-item">
+                    <!-- Ganti src dengan gambar akun OPBR dari komputermu -->
+                    <img src="akun-opbr-1.jpg" alt="Akun OPBR"> 
+                    <div class="card-katalog-info">
+                        <h4>Gear 5 Luffy | EX Zoro | Max Boost 2 | 1000 RDS</h4>
+                        <p class="harga-coret">Rp 850.000</p>
+                        <p class="harga-asli">Rp 799.999</p>
+                    </div>
+                </div>
+
+                <!-- Kotak Akun OPBR 2 -->
+                <div class="card-katalog-item">
+                    <img src="akun-opbr-2.jpg" alt="Akun OPBR">
+                    <div class="card-katalog-info">
+                        <h4>EX Roger V2 | Shanks Kamusari | Support 150%</h4>
+                        <p class="harga-coret">Rp 600.000</p>
+                        <p class="harga-asli">Rp 549.999</p>
+                    </div>
+                </div>
+
+                <!-- Kotak Akun OPBR 3 -->
+                <div class="card-katalog-item">
+                    <img src="akun-opbr-3.jpg" alt="Akun OPBR">
+                    <div class="card-katalog-info">
+                        <h4>Starter Klaw | Yace | 2500 RDS | Siap Gacha</h4>
+                        <p class="harga-coret">Rp 150.000</p>
+                        <p class="harga-asli">Rp 119.999</p>
+                    </div>
+                </div>
+
+                <!-- Tambahkan kotak lainnya sesuai stok akun OPBR yang kamu miliki -->
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
