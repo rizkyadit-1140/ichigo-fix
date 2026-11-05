@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICHIGOSTORE - TopUp & Jual Akun</title>
-    <!-- Menyambungkan ke CSS murni -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Bagian Navigasi -->
     <nav class="navbar">
         <div class="logo">ICHIGOSTORE</div>
         <div class="search-bar">
@@ -24,20 +23,11 @@
         </ul>
     </nav>
 
-    <!-- Bagian Banner Utama -->
-    <!-- Bagian Banner Utama (Slider) -->
     <header class="banner-slider">
         <div class="slider-container" id="sliderContainer">
-            <!-- Ganti src="..." dengan nama file gambarmu nanti, contoh: "banner1.jpg" -->
-            <div class="slide active">
-                <img src="images/banner1.jpg" alt="Banner 1">
-            </div>
-            <div class="slide active">
-                <img src="images/banner2.jpg" alt="Banner 2">
-            </div>
-            <div class="slide active">
-                <img src="images/banner3.jpg" alt="Banner 3">
-            </div>
+            <div class="slide active"><img src="images/banner1.jpg" alt="Banner 1"></div>
+            <div class="slide active"><img src="images/banner2.jpg" alt="Banner 2"></div>
+            <div class="slide active"><img src="images/banner3.jpg" alt="Banner 3"></div>
         </div>
         <div class="dots-container" id="dotsContainer">
             <span class="dot active" onclick="goToSlide(0)"></span>
@@ -47,12 +37,9 @@
     </header>
 
     <main>
-        <!-- Bagian Flash Sale -->
-        <!-- Bagian Flash Sale -->
         <section class="section">
             <div class="section-title">
                 <div class="ribbon-banner">
-                    <!-- Memanggil gambar petir milikmu -->
                     <img src="images/petir.png" alt="Petir" class="ribbon-icon">
                     
                     <span class="ribbon-text">Flash Sale</span>
@@ -61,138 +48,49 @@
             </div>
             
             <div class="grid-flash">
-                <!-- Kotak Produk 1 Menggunakan Gambar Full -->
-                <div class="card-flash-img">
-                    <!-- Ganti "gambar-flash-1.png" dengan nama file gambarmu yang sebenarnya -->
-                    <img src="images/sale1.png" alt="Promo Flash Sale 1">
-                </div>
-                
-                <!-- Kotak Produk 2 Menggunakan Gambar Full -->
-                <div class="card-flash-img">
-                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
-                    <img src="images/sale2.png" alt="Promo Flash Sale 2">
-                </div>
-                
-                <!-- Kalau ada 3 atau 4 produk, tinggal copy-paste blok div "card-flash-img" di atas -->
-                 <div class="card-flash-img">
-                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
-                    <img src="images/sale3.png" alt="Promo Flash Sale 2">
-                </div>
-                <div class="card-flash-img">
-                    <!-- Ganti "gambar-flash-2.png" dengan nama file gambarmu yang sebenarnya -->
-                    <img src="images/sale4.png" alt="Promo Flash Sale 2">
-                </div>
+                <div class="card-flash-img"><img src="images/sale1.png" alt="Promo Flash Sale 1"></div>
+                <div class="card-flash-img"><img src="images/sale2.png" alt="Promo Flash Sale 2"></div>
+                <div class="card-flash-img"><img src="images/sale3.png" alt="Promo Flash Sale 3"></div>
+                <div class="card-flash-img"><img src="images/sale4.png" alt="Promo Flash Sale 2"></div>
             </div>
         </section>
 
-        <!-- ============================== -->
-        <!-- BAGIAN BELI AKUN               -->
-        <!-- ============================== -->
-        <!-- ============================== -->
-        <!-- BAGIAN BELI AKUN               -->
-        <!-- ============================== -->
         <section class="section">
-            <div class="section-title">
-                <!-- Gambar Banner Beli Akun Utuh (Pita + Teks menyatu) -->
-                <!-- Ganti "banner-beli-akun.png" dengan nama file gambarmu -->
-                <img src="images/bannerakunfix.png" alt="Banner Beli Akun" class="ribbon-akun-full">
-            </div>
-
-            <!-- Area Geser Produk Beli Akun (Tetap sama seperti sebelumnya) -->
+            <div class="section-title"><img src="images/bannerakunfix.png" alt="Banner Beli Akun" class="ribbon-akun-full"></div>
             <div class="grid-akun">
-                <a href="beli-akun-opbr.html" class="card-akun-img">
-                    <img src="images/akun1.png" alt="Akun OPBR">
-                </a>
-                <a href="beli-akun-ml.html" class="card-akun-img">
-                    <img src="images/akun2.png" alt="Akun MLBB">
-                </a>
-                <a href="beli-akun-ff.html" class="card-akun-img">
-                    <img src="images/akun3.png" alt="Akun Free Fire">
-                </a>
-                <a href="beli-akun-valo.html" class="card-akun-img">
-                    <img src="images/akun4.png" alt="Akun Valorant">
-                </a>
-                <a href="beli-akun-pubg.html" class="card-akun-img">
-                    <img src="images/akun5.png" alt="Akun pubg">
-                </a>
-                <!-- dan seterusnya... -->
+                <a href="beli-akun-opbr.html" class="card-akun-img"><img src="images/akun1.png" alt="Akun OPBR"></a>
+                <a href="beli-akun-ml.html" class="card-akun-img"><img src="images/akun2.png" alt="Akun MLBB"></a>
+                <a href="beli-akun-ff.html" class="card-akun-img"><img src="images/akun3.png" alt="Akun Free Fire"></a>
+                <a href="beli-akun-valo.html" class="card-akun-img"><img src="images/akun4.png" alt="Akun Valorant"></a>
+                <a href="beli-akun-pubg.html" class="card-akun-img"><img src="images/akun5.png" alt="Akun pubg"></a>
         </section>
-        <!-- ============================== -->
-        <!-- BAGIAN TOP UP GAME             -->
-        <!-- ============================== -->
-        <section class="section">
-            <div class="section-title">
-                <!-- Gambar Banner Top Up Utuh (Pita + Teks menyatu) -->
-                <!-- Ganti "banner-topup.png" dengan nama file gambarmu -->
-                <img src="images/BannerTop.png" alt="Banner Top Up Game" class="ribbon-topup-full">
-            </div>
 
-            <!-- Area Grid Produk Top Up (Katalog Tersusun) -->
+        <section class="section">
+            <div class="section-title"><img src="images/BannerTop.png" alt="Banner Top Up Game" class="ribbon-topup-full"></div>
+
             <div class="grid-topup">
-                <!-- Kotak Produk Top Up 1 -->
-                <a href="topup-ml.html" class="card-topup-img">
-                    <img src="images/top1.png" alt="Top Up MLBB">
-                </a>
-                
-                <!-- Kotak Produk Top Up 2 -->
-                <a href="topup-genshin.html" class="card-topup-img">
-                    <img src="images/top2.png" alt="Top Up Genshin Impact">
-                </a>
-                
-                <!-- Kotak Produk Top Up 3 -->
-                <a href="topup-ff.html" class="card-topup-img">
-                    <img src="images/top3.png" alt="Top Up Free Fire">
-                </a>
-                
-                <!-- Kotak Produk Top Up 4 -->
-                <a href="topup-pubg.html" class="card-topup-img">
-                    <img src="images/top4.png" alt="Top Up PUBG Mobile">
-                </a>
-
-                <a href="topup-valorant.html" class="card-topup-img">
-                    <img src="images/top5.png" alt="Top Up Valorant">
-                </a>
-                <a href="topup-csgo.html" class="card-topup-img">
-                    <img src="images/top6.png" alt="Top Up Counter Strike">
-                </a>
-                <a href="topup-roblox.html" class="card-topup-img">
-                    <img src="images/top7.png" alt="Top Up Roblox">
-                </a>
-                <a href="topup-wuwa.html" class="card-topup-img">
-                    <img src="images/top8.png" alt="Top Up wuthering waves">
-                </a>
-                <!-- Bisa terus di-copy-paste sebanyak jumlah game yang kamu punya -->
+                <a href="topup-ml.html" class="card-topup-img"><img src="images/top1.png" alt="Top Up MLBB"></a>
+                <a href="topup-genshin.html" class="card-topup-img"><img src="images/top2.png" alt="Top Up Genshin Impact"></a>
+                <a href="topup-ff.html" class="card-topup-img"><img src="images/top3.png" alt="Top Up Free Fire"></a>
+                <a href="topup-pubg.html" class="card-topup-img"><img src="images/top4.png" alt="Top Up PUBG Mobile"></a>
+                <a href="topup-valorant.html" class="card-topup-img"><img src="images/top5.png" alt="Top Up Valorant"></a>
+                <a href="topup-csgo.html" class="card-topup-img"><img src="images/top6.png" alt="Top Up Counter Strike"></a>
+                <a href="topup-roblox.html" class="card-topup-img"><img src="images/top7.png" alt="Top Up Roblox"></a>
+                <a href="topup-wuwa.html" class="card-topup-img"><img src="images/top8.png" alt="Top Up wuthering waves"></a>
             </div>
         </section>
-        <!-- ============================== -->
-        <!-- BAGIAN JOKI GAME               -->
-        <!-- ============================== -->
-        <section class="section">
-            <div class="section-title">
-                <!-- Gambar Banner Joki Utuh (Pita + Teks menyatu) -->
-                <img src="images/bannerjoki.png" alt="Banner Joki" class="ribbon-joki-full">
-            </div>
 
-            <!-- Area Grid Produk Joki (Katalog Tersusun) -->
+        <section class="section">
+            <div class="section-title"><img src="images/bannerjoki.png" alt="Banner Joki" class="ribbon-joki-full"></div>
+
             <div class="grid-joki">
-                <!-- Kotak Produk Joki 1 -->
-                <div class="card-joki-img">
-                    <img src="images/joki1.png" alt="Joki MLBB">
-                </div>
-                
-                <!-- Kotak Produk Joki 2 -->
-                <div class="card-joki-img">
-                    <img src="images/joki2.png" alt="Joki FF">
-                </div>
-                <div class="card-joki-img">
-                    <img src="images/joki3.png" alt="Joki FF">
-                </div>
-                <!-- Tambahkan kotak lainnya sesuai kebutuhan -->
+                <div class="card-joki-img"><img src="images/joki1.png" alt="Joki MLBB"></div>
+                <div class="card-joki-img"><img src="images/joki2.png" alt="Joki FF"></div>
+                <div class="card-joki-img"><img src="images/joki3.png" alt="Joki FF"></div>
             </div>
         </section>
     </main>
 
-    <!-- Menyambungkan ke file JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
