@@ -583,3 +583,199 @@ main {
     transform: translateY(-8px);
     filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
 }
+/* ============================== */
+/* HALAMAN KATALOG BELI AKUN      */
+/* ============================== */
+
+/* Wadah pemisah antara Sidebar Kiri dan Konten Kanan */
+.container-akun-katalog {
+    display: flex;
+    gap: 25px;
+    padding: 30px 50px;
+    align-items: flex-start;
+}
+
+/* --- KIRI: SIDEBAR FILTER --- */
+.sidebar-filter {
+    width: 300px;
+    background-color: #1a0303;
+    border: 1px solid #cc0000; /* Garis pinggir merah sesuai referensi */
+    border-radius: 10px;
+    padding: 20px;
+    flex-shrink: 0;
+    color: #f5f5dc;
+}
+
+.sidebar-filter h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #5a1010;
+    padding-bottom: 15px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Desain Dropdown dan Input Text */
+.sidebar-filter select, .input-rp {
+    width: 100%;
+    background-color: #2b0505;
+    color: #f5f5dc;
+    border: 1px solid #5a1010;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box; /* Agar padding tidak merusak lebar */
+}
+
+.sidebar-filter select {
+    padding: 12px 10px;
+}
+
+/* Kolom Rp yang menyatu dengan angka */
+.input-rp {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.input-rp span {
+    color: #888;
+    margin-right: 5px;
+}
+
+.input-rp input {
+    background: transparent;
+    border: none;
+    color: #f5f5dc;
+    width: 100%;
+    padding: 12px 0;
+    outline: none;
+}
+
+/* Radio Button Urutkan Harga */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* Tombol Filter */
+.btn-filter {
+    width: 100%;
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-reset {
+    width: 100%;
+    background: transparent;
+    color: #888;
+    border: 1px solid #5a1010;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- KANAN: KONTEN PRODUK --- */
+.content-akun {
+    flex-grow: 1; /* Memakan sisa ruang di sebelah kanan sidebar */
+}
+
+/* Kotak Pencarian Atas */
+.search-akun-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-akun-bar input {
+    flex-grow: 1;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f5dc; /* Latar putih/cream sesuai referensi */
+    color: #1a0303;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-akun-bar button {
+    background: linear-gradient(to right, #cc0000, #ff1a1a);
+    color: white;
+    border: none;
+    padding: 0 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Grid Katalog Kotak Akun */
+.grid-katalog-akun {
+    display: grid;
+    /* Otomatis membagi kolom, minimal lebar 250px per kotak */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+    gap: 20px;
+}
+
+/* Desain Kartu Akun */
+.card-katalog-item {
+    background-color: #1a0303;
+    border: 1px solid #3d0a0a;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-katalog-item:hover {
+    transform: translateY(-5px);
+    border-color: #cc0000;
+}
+
+.card-katalog-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-katalog-info {
+    padding: 15px;
+    color: #f5f5dc;
+}
+
+.card-katalog-info h4 {
+    font-size: 0.95rem;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    height: 40px; /* Membatasi tinggi judul maksimal 2 baris */
+    overflow: hidden;
+}
+
+.harga-coret {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 0.85rem;
+    margin: 0 0 5px 0;
+}
+
+.harga-asli {
+    color: #f5f5dc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
