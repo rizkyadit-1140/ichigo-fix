@@ -1,9 +1,25 @@
 /* === LAYOUT UTAMA === */
-.topup-container { display: grid; grid-template-columns: 280px 1fr 320px; gap: 20px; max-width: 1300px; margin: 30px auto; padding: 0 20px; }
+.topup-container {
+    display: grid;
+    grid-template-columns: 1fr 340px;            /* kiri: langkah & checkout, kanan: info game */
+    grid-template-areas:
+        "steps    info"
+        "checkout checkout";
+    gap: 20px;
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.steps-container    { grid-area: steps; }
+.checkout-container { grid-area: checkout; }
+.game-info          { grid-area: info; }
 .panel { background-color: #3b0a0d; border: 1px solid #7a1b22; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
 
-/* === INFO GAME === */
-.game-banner { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+/* === INFO GAME (kolom kanan) === */
+.game-info { display: flex; flex-direction: column; }
+.game-info .panel { flex: 1; margin-bottom: 0; }          /* panel kanan memanjang sampai bawah checkout */
+.steps-container .panel:last-child { margin-bottom: 0; } /* supaya jarak ke checkout = gap grid (20px) */
+.game-banner { width: 100%; max-height: 300px; object-fit: cover; object-position: center top; display: block; border-radius: 10px; margin-bottom: 15px; }
 .game-info h2 { font-size: 18px; margin-bottom: 5px; }
 .game-info p.publisher { font-size: 12px; color: #ccc; margin-bottom: 15px; }
 .game-desc { font-size: 12px; color: #ccc; line-height: 1.6; margin-bottom: 15px; }
@@ -21,27 +37,39 @@
 .diamond-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .diamond-card { background-color: #5a151b; border: 1px solid #7a1b22; border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.2s; }
 .diamond-card:hover, .diamond-card.active { border-color: #ffae00; background-color: #6d1c22; }
-.diamond-card img { width: 35px; }
+.diamond-card img { width: 35px; height: 35px; object-fit: contain; flex-shrink: 0; }
 .d-info h4 { font-size: 13px; margin-bottom: 2px; }
 .d-info p { font-size: 12px; color: #ffae00; font-weight: bold; }
 
 /* === PEMBAYARAN === */
-.payment-layout { display: flex; gap: 15px; }
+.payment-layout { display: block; }
 .pay-sidebar { flex: 1; display: flex; flex-direction: column; gap: 5px; border-right: 1px solid #7a1b22; padding-right: 10px; }
 .pay-sidebar button { background: transparent; border: none; color: #fff; text-align: left; padding: 10px; font-size: 13px; cursor: pointer; border-radius: 5px; }
 .pay-sidebar button:hover, .pay-sidebar button.active { background-color: #5a151b; font-weight: bold; border-left: 3px solid #ffae00; }
-.pay-methods { flex: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: start; }
-.pay-card { background-color: #5a151b; border: 1px solid #7a1b22; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.pay-methods { flex: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-content: start; }
+.pay-card { background-color: #5a151b; border: 1px solid #7a1b22; padding: 14px 10px; border-radius: 8px; display: flex; flex-direction: column; text-align: center; align-items: center; gap: 8px; cursor: pointer; }
 .pay-card:hover, .pay-card.active { border-color: #ffae00; }
+/* Logo pembayaran: ruang kosong gambar dipotong otomatis oleh data-topup.js,
+   lalu semua logo diberi tinggi yang sama */
 .pay-card img {
-    width: 45px;
-    height: auto;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: 32px;
+    margin: 6px auto;
     object-fit: contain;
+    flex-shrink: 0;
 }
+.pay-info { text-align: center; }
 .pay-info h4 { font-size: 12px; }
 .pay-info p { font-size: 11px; color: #ffae00; }
 
-/* === CHECKOUT === */
+/* === CHECKOUT (di bawah langkah-langkah, kolom kiri) === */
+.checkout-container .panel { margin-bottom: 0; }
+.checkout-container .panel > h3 { margin-bottom: 15px; border-bottom: 1px solid #7a1b22; padding-bottom: 10px; }
+.checkout-body { display: grid; grid-template-columns: 1fr 340px; gap: 30px; align-items: end; }
+.co-action .total-price { border-top: none; padding-top: 0; }
+.co-summary .email-input { margin-top: 5px; }
 .checkout-item { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 10px; color: #ccc; }
 .checkout-item span:last-child { color: #fff; font-weight: bold; text-align: right;}
 .email-input { width: 100%; padding: 10px; background-color: #5a151b; border: 1px solid #7a1b22; color: #fff; border-radius: 5px; margin-top: 10px; outline: none; }
@@ -56,3 +84,28 @@
 .promo-input button { background-color: #ffae00; color: #000; font-weight: bold; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
 .promo-empty { text-align: center; color: #ccc; font-size: 12px; }
 .promo-empty i { font-size: 40px; color: #7a1b22; margin-bottom: 10px; }
+
+/* === POP-UP PEMBAYARAN E-WALLET === */
+.ewallet-box { background: #1a0303; border: 1px dashed #cc0000; border-radius: 10px; padding: 18px; margin: 10px 0 15px; }
+.ewallet-box .label { color: #aaa; font-size: 0.8rem; margin: 0; }
+.ewallet-box .nomor { font-size: 1.6rem; font-weight: bold; letter-spacing: 2px; color: #ffcc00; margin: 4px 0 10px; }
+.ewallet-box .nominal { font-size: 1.1rem; font-weight: bold; margin: 4px 0 12px; }
+.btn-salin { background: #fff; color: #000; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+.dummy-note { font-size: 0.7rem; color: #888; margin-top: 8px; }
+
+@media (max-width: 900px) {
+    .checkout-body { grid-template-columns: 1fr; }
+    .topup-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "info"
+            "steps"
+            "checkout";
+    }
+}
+@media (max-width: 600px) {
+    .diamond-grid { grid-template-columns: repeat(2, 1fr); }
+    .diamond-card[style*="span"] { grid-column: span 2 !important; }
+    .pay-methods { grid-template-columns: 1fr; }
+    .pay-card { flex-direction: row; text-align: left; }
+}
