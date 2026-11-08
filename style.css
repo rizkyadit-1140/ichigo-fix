@@ -13,6 +13,7 @@ html {
 body {
     background-color: #1a0505;
     color: #ffffff;
+    padding-top: 100px; /* Mendorong seluruh konten ke bawah agar tidak tertimpa header fixed */
 }
 
 /* --- Navigasi --- */
