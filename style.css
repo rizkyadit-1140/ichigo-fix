@@ -23,6 +23,12 @@ body {
     padding: 15px 50px;
     background-color: #110202;
     border-bottom: 1px solid #3d0a0a;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
 }
 .nav-logo {
     display: flex;
@@ -78,16 +84,36 @@ body {
     transition: background-color 0.2s;
 }
 
+
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px; /* Jarak antar kotak */
 }
+
 .nav-links a {
-    color: #f5f5dc;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 700; /* Font lebih tebal */
+    padding: 12px 18px;
+
+    /* Kotak masing-masing menu */
+    background-color: #2b1111;
+    border: 1px solid #501010;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
 }
+
+/* Efek hover */
+.nav-links a:hover {
+    background-color: #501010;
+    border-color: #ffb000;
+    color: #ffb000;
+    transform: translateY(-2px);
+}
+
 .btn-masuk {
     background-color: #cc0000;
     color: white;
