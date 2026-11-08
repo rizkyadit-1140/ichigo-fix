@@ -551,17 +551,15 @@ main {
 /* 2. Area Grid Top Up (Bentuk Katalog Tersusun) */
 .grid-topup {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Sangat penting: Memaksa produk turun ke baris baru jika mentok */
-    justify-content: flex-start; /* Menyusun rapi dari kiri ke kanan */
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
     padding-bottom: 25px;
 }
 
-/* 3. Desain Kotak Gambar Produk Top Up */
 .card-topup-img {
-    /* Lebar kotak disetel 160px agar muat banyak berjejer. 
-       Silakan dibesarkan/dikecilkan sesuai bentuk gambar game kamu */
-    width: 260px; 
+    width: calc(33.333% - 17px);
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
