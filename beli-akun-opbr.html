@@ -8,16 +8,10 @@
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
-    <!-- ========================================== -->
-    
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
         
-        <!-- ============================== -->
-        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
             
@@ -64,9 +58,7 @@
             <button class="btn-reset">Reset Filter</button>
         </aside>
 
-        <!-- ============================== -->
-        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK -->
         <main class="content-akun">
             
             <!-- Pencarian -->
@@ -79,9 +71,15 @@
             <div class="grid-katalog-akun">
                 
                 <!-- Kotak Akun OPBR 1 -->
-                <div class="card-katalog-item">
-                    <!-- Ganti src dengan gambar akun OPBR dari komputermu -->
-                    <img src="akun-opbr-1.jpg" alt="Akun OPBR"> 
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Gear 5 Luffy | EX Zoro | Max Boost 2 | 1000 RDS"
+                    data-harga="Rp 799.999"
+                    data-kode="OPBR-01"
+                    data-gambar="images/skinop.png"
+                    data-gambarss="images/spekop.png"
+                    data-spek="League: SS League|Char EX: Gear 5 & Zoro|RDS: 1000|Boost: Max 2">
+                    
+                    <img src="images/skinop.png" alt="Akun OPBR"> 
                     <div class="card-katalog-info">
                         <h4>Gear 5 Luffy | EX Zoro | Max Boost 2 | 1000 RDS</h4>
                         <p class="harga-coret">Rp 850.000</p>
@@ -90,8 +88,15 @@
                 </div>
 
                 <!-- Kotak Akun OPBR 2 -->
-                <div class="card-katalog-item">
-                    <img src="akun-opbr-2.jpg" alt="Akun OPBR">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="EX Roger V2 | Shanks Kamusari | Support 150%"
+                    data-harga="Rp 549.999"
+                    data-kode="OPBR-02"
+                    data-gambar="images/skinop1.png"
+                    data-gambarss="images/spekop1.png"
+                    data-spek="League: S+ League|Char EX: Roger V2 & Shanks|Support: 150%">
+                    
+                    <img src="images/skinop1.png" alt="Akun OPBR">
                     <div class="card-katalog-info">
                         <h4>EX Roger V2 | Shanks Kamusari | Support 150%</h4>
                         <p class="harga-coret">Rp 600.000</p>
@@ -100,8 +105,15 @@
                 </div>
 
                 <!-- Kotak Akun OPBR 3 -->
-                <div class="card-katalog-item">
-                    <img src="akun-opbr-3.jpg" alt="Akun OPBR">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Starter Klaw | Yace | 2500 RDS | Siap Gacha"
+                    data-harga="Rp 119.999"
+                    data-kode="OPBR-03"
+                    data-gambar="images/skinop2.png"
+                    data-gambarss="images/spekop2.png"
+                    data-spek="League: Starter|Char EX: Klaw & Yace|RDS: 2500|Status: Unbind">
+                    
+                    <img src="images/skinop2.png" alt="Akun OPBR">
                     <div class="card-katalog-info">
                         <h4>Starter Klaw | Yace | 2500 RDS | Siap Gacha</h4>
                         <p class="harga-coret">Rp 150.000</p>
@@ -109,11 +121,12 @@
                     </div>
                 </div>
 
-                <!-- Tambahkan kotak lainnya sesuai stok akun OPBR yang kamu miliki -->
-
             </div>
         </main>
     </div>
 
+    <!-- Panggil fungsi filter dan fungsi pemindah data -->
+    <script src="script-beli-akun.js"></script>
+    <script src="script-katalog.js"></script> 
 </body>
 </html>
