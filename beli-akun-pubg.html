@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beli Akun PUBG Mobile - Ichigo Store</title>
-    <link rel="stylesheet" href="style.css"> <!-- Tetap pakai CSS yang sama -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-
-    <!-- ========================================== -->
-    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
-    <!-- ========================================== -->
     
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
         
-        <!-- ============================== -->
-        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
             
@@ -64,9 +58,7 @@
             <button class="btn-reset">Reset Filter</button>
         </aside>
 
-        <!-- ============================== -->
-        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK -->
         <main class="content-akun">
             
             <!-- Pencarian -->
@@ -79,9 +71,15 @@
             <div class="grid-katalog-akun">
                 
                 <!-- Kotak Akun PUBG 1 -->
-                <div class="card-katalog-item">
-                    <!-- Ganti src dengan gambar akun PUBG dari komputermu -->
-                    <img src="akun-pubg-1.jpg" alt="Akun PUBG"> 
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="M4 Glacier Max (Lv. 7) | Set Mummy Kuning | Title Conqueror"
+                    data-harga="Rp 3.199.999"
+                    data-kode="PUBG-01"
+                    data-gambar="images/skinpubg.png"
+                    data-gambarss="images/spekpubg.png"
+                    data-spek="Rank: Conqueror|Senjata: M4 Glacier Lv.7|Set: Mummy Kuning">
+                    
+                    <img src="images/skinpubg.png" alt="Akun PUBG"> 
                     <div class="card-katalog-info">
                         <h4>M4 Glacier Max (Lv. 7) | Set Mummy Kuning | Title Conqueror</h4>
                         <p class="harga-coret">Rp 3.500.000</p>
@@ -90,8 +88,15 @@
                 </div>
 
                 <!-- Kotak Akun PUBG 2 -->
-                <div class="card-katalog-item">
-                    <img src="akun-pubg-2.jpg" alt="Akun PUBG">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Pharaoh X-Suit Lv. 4 | AKM Hellfire | UAZ Aegis"
+                    data-harga="Rp 1.999.999"
+                    data-kode="PUBG-02"
+                    data-gambar="images/skinpubg1.png"
+                    data-gambarss="images/spekpubg1.png"
+                    data-spek="Rank: Ace Dominator|X-Suit: Pharaoh Lv.4|Kendaraan: UAZ Aegis">
+                    
+                    <img src="images/skinpubg1.png" alt="Akun PUBG">
                     <div class="card-katalog-info">
                         <h4>Pharaoh X-Suit Lv. 4 | AKM Hellfire | UAZ Aegis</h4>
                         <p class="harga-coret">Rp 2.200.000</p>
@@ -100,8 +105,15 @@
                 </div>
 
                 <!-- Kotak Akun PUBG 3 -->
-                <div class="card-katalog-item">
-                    <img src="akun-pubg-3.jpg" alt="Akun PUBG">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Akun RP Max S12-A3 | M4 Lizard Lv. 4 | Material Sisa 3"
+                    data-harga="Rp 749.999"
+                    data-kode="PUBG-03"
+                    data-gambar="images/skinpubg2.png"
+                    data-gambarss="images/spekpubg2.png"
+                    data-spek="Rank: Ace Master|Royale Pass: Max S12-A3|Material: Sisa 3">
+                    
+                    <img src="images/skinpubg2.png" alt="Akun PUBG">
                     <div class="card-katalog-info">
                         <h4>Akun RP Max S12-A3 | M4 Lizard Lv. 4 | Material Sisa 3</h4>
                         <p class="harga-coret">Rp 850.000</p>
@@ -109,11 +121,12 @@
                     </div>
                 </div>
 
-                <!-- Tambahkan kotak lainnya sesuai stok akun PUBG yang kamu miliki -->
-
             </div>
         </main>
     </div>
 
+    <!-- Panggil fungsi filter dan fungsi pemindah data ke checkout -->
+    <script src="script-beli-akun.js"></script>
+    <script src="script-katalog.js"></script>
 </body>
 </html>
