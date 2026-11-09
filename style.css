@@ -13,62 +13,82 @@ body {
 }
 
 /* --- Navigasi --- */
-.navbar {
+.navbar-checkout {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #3d0a0a;
-    padding: 15px 40px;
-    border-bottom: 2px solid #5a1010;
+    padding: 15px 50px;
+    background-color: #110202;
+    border-bottom: 1px solid #3d0a0a;
 }
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #e60000; /* Merah terang */
-}
-
-.search-bar {
+.nav-logo {
     display: flex;
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px 15px;
-    width: 30%;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+.logo-img { 
+    height: 50px;     
 }
 
-.search-bar input {
+.nav-search {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0; /* Warna abu-abu terang */
+    
+    /* Ini rahasianya: Kiri-Atas (0), Kanan-Atas (30px), Kanan-Bawah (0), Kiri-Bawah (30px) */
+    border-radius: 0 30px 0 30px; 
+    
+    padding: 5px; /* Memberi jarak agar tombol di dalam tidak menempel ke tepi */
+    width: 450px; /* Sesuaikan panjang kotak sesuai selera */
+}
+
+/* Kolom Input Teks */
+.nav-search input {
+    flex-grow: 1;
+    background: transparent; /* Membuat latar input tembus pandang */
     border: none;
     outline: none;
-    width: 100%;
-    color: black;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
 }
 
-.search-bar button {
-    background: none;
+/* Tombol Cari Merah Gelap */
+.btn-search-nav {
+    background-color: #4a0000; /* Warna dark maroon */
     border: none;
+    
+    /* Lengkungan hanya di Kanan-Atas untuk menyesuaikan wadah luar */
+    border-radius: 0 20px 0 0; 
+    
+    width: 45px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
+.btn-search-nav:hover {
+    background-color: #cc0000; /* Warna berubah saat disorot mouse */
+}
 .nav-links {
     display: flex;
-    list-style: none;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
 }
-
 .nav-links a {
-    color: white;
+    color: #f5f5dc;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.95rem;
 }
-
-.nav-links a:hover {
-    color: #e60000;
-}
-
 .btn-masuk {
-    background-color: #e60000;
+    background-color: #cc0000;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -778,4 +798,65 @@ main {
     font-weight: bold;
     font-size: 1.2rem;
     margin: 0;
+}
+
+/* ============================== */
+/* GAYA HALAMAN RIWAYAT           */
+/* ============================== */
+
+.container-riwayat {
+    padding: 40px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 60vh; /* Agar footer tidak terlalu naik ke atas kalau riwayat kosong */
+}
+
+.grid-riwayat {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-riwayat {
+    background-color: #1a0303;
+    border: 1px solid #5a1010;
+    border-left: 5px solid #cc0000; /* Garis aksen merah di sebelah kiri */
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-riwayat h3 {
+    margin: 0 0 8px 0;
+    color: #f5f5dc;
+    font-size: 1.2rem;
+}
+
+.info-riwayat p {
+    margin: 3px 0;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.status-riwayat {
+    text-align: right;
+}
+
+.badge-selesai {
+    background-color: #008000; /* Hijau sukses */
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.tgl-riwayat {
+    color: #888;
+    font-size: 0.85rem;
 }

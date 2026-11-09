@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pembelian - Ichigo Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-checkout.css">
+</head>
+<body class="body-checkout">
+
+    <!-- 1. Panggil Header Otomatis -->
+    <div id="tempat-header"></div>
+
+    <!-- 2. Konten Utama Riwayat -->
+    <main class="container-riwayat">
+        <h1 style="color: #ffcc00; border-bottom: 2px solid #cc0000; padding-bottom: 10px;">Riwayat Pembelian</h1>
+        
+        <!-- Wadah Kosong: Nanti JavaScript akan mencetak kartu pesanan di sini -->
+        <div id="daftar-riwayat" class="grid-riwayat">
+            <p style="color: #ccc; font-style: italic;">Memuat riwayat...</p>
+        </div>
+    </main>
+
+    <!-- Script Panggil Header & Script Khusus Riwayat -->
+    <script src="load-header.js"></script>
+    <script src="script-riwayat.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+/* ============================== */
+/* GAYA KHUSUS HALAMAN CHECKOUT   */
+/* ============================== */
+
+/* Background Global */
+.body-checkout {
+    background-color: #1a0505; /* Warna dark maroon gelap */
+    color: #f5f5dc;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* --- 1. NAVBAR --- */
+
+
+/* --- 2. KONTEN UTAMA --- */
+.container-checkout {
+    display: flex;
+    gap: 40px;
+    padding: 40px 50px 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kiri: Gambar & Info */
+.checkout-left {
+    width: 320px;
+    flex-shrink: 0;
+}
+.checkout-img-main {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+.checkout-store-info {
+    border: 1px solid #cc0000;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    background-color: rgba(204, 0, 0, 0.05); /* Transparan merah */
+}
+.checkout-store-info p { margin-top: 0; margin-bottom: 15px; }
+.checkout-store-info p:last-child { margin-bottom: 0; }
+
+/* Kanan: Detail & Form */
+.checkout-right { flex-grow: 1; }
+.checkout-title {
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+    line-height: 1.4;
+}
+.checkout-code {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0 0 15px 0;
+}
+.checkout-price {
+    color: #ffcc00; /* Kuning Emas */
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+}
+.checkout-specs p { margin: 0 0 5px 0; font-weight: bold; }
+.checkout-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Tombol Oranye-Merah */
+.btn-screenshoot {
+    background: linear-gradient(to right, #ff6b00, #cc0000);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Kotak Pita (Ribbon Cards) */
+.checkout-card {
+    margin-bottom: 30px;
+    position: relative;
+}
+.checkout-ribbon {
+    background: linear-gradient(to right, #cc0000, #800000);
+    display: inline-block;
+    padding: 10px 40px 10px 20px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%);
+    position: absolute;
+    top: -15px;
+    left: 0;
+    z-index: 2;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.ribbon-icon {
+    margin-right: 8px;
+    color: #ffcc00;
+    font-size: 1.2rem;
+}
+.checkout-card-body {
+    background-color: #2b0505;
+    border: 1px solid #5a1010;
+    border-radius: 8px;
+    padding: 45px 25px 25px 25px; /* Padding atas lebih besar untuk ruang pita */
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Pembayaran */
+.payment-category {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.payment-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+.radio-label input[type="radio"] {
+    accent-color: #cc0000;
+    width: 16px;
+    height: 16px;
+}
+.icon-pay { height: 20px; border-radius: 3px; }
+
+/* Form Data Diri */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.form-group input {
+    width: 100%;
+    background-color: #1a0303;
+    border: 1px solid #3d0a0a;
+    color: #f5f5dc;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* --- 3. BAR TOTAL BAWAH --- */
+.checkout-bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 50px 0;
+}
+.bottom-ribbon {
+    background: linear-gradient(to right, #800000, #4d0000);
+    display: flex;
+    align-items: center;
+    clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0% 50%);
+    padding: 15px 50px;
+    border: 1px solid #cc0000;
+}
+
+.label-gambar-checkout {
+    width: 400px; /* Sesuaikan angka ini untuk membesarkan/mengecilkan gambar labelmu */
+    height: auto;
+    position: absolute; /* Membuat gambar bisa melayang menimpa kotak hitam */
+    top: -20px; /* Menggeser gambar ke atas agar keluar dari garis kotak */
+    left: -15px; /* Menggeser gambar sedikit ke kiri */
+    z-index: 2; /* Memastikan gambar berada di lapisan paling depan */
+}
+
+.total-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 40px;
+}
+.total-price { color: #ffcc00; }
+.btn-checkout-final {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-left: 2px solid rgba(255,255,255,0.2);
+    padding-left: 40px;
+}
+
+/* --- 4. FOOTER --- */
+.footer-checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #110202;
+    border-top: 1px solid #3d0a0a;
+    padding: 40px 50px;
+    gap: 20px;
+}
+.footer-col h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.brand-col { text-align: center; }
+.footer-logo { height: 40px; margin-bottom: 10px; }
+.brand-col p { margin: 0; font-weight: bold; font-size: 1.1rem; }
+.brand-col small { color: #666; }
+.social-icons span {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.pay-icons-footer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.pay-icons-footer img { height: 25px; border-radius: 3px; }
+.contact-col p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* ============================== */
+/* GAYA POP-UP (MODAL) SCREENSHOT */
+/* ============================== */
+
+/* Wadah layar gelap di belakang pop-up */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Gelap transparan */
+    z-index: 9999; /* Memastikan pop-up berada di lapisan paling depan */
+    
+    /* Flexbox untuk memposisikan kotak pop-up di tengah layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kotak utama pop-up tempat gambar berada */
+.modal-content {
+    background-color: #1a0505;
+    border: 1px solid #cc0000;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 85vh; /* Maksimal tinggi 85% dari layar agar tidak terpotong */
+    overflow-y: auto; /* Memunculkan scroll-bar otomatis jika gambar panjang */
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.4);
+}
+
+/* Tombol X Tutup */
+.btn-close-modal {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-close-modal:hover {
+    background-color: #ff1a1a;
+}

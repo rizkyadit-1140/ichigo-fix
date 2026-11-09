@@ -4,33 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beli Akun Valorant - Ichigo Store</title>
-    <link rel="stylesheet" href="style.css"> <!-- Tetap pakai CSS yang sama -->
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
-    <!-- ========================================== -->
-    
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
         
-        <!-- ============================== -->
-        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
-            
-            <div class="filter-group">
-                <label>Rank Tertinggi</label>
-                <select>
-                    <option>Pilih Rank Tertinggi</option>
-                    <option>Radiant / Immortal</option>
-                    <option>Ascendant</option>
-                    <option>Diamond / Platinum</option>
-                    <option>Gold ke Bawah (Smurf)</option>
-                </select>
-            </div>
 
             <div class="filter-group">
                 <label>Harga Minimal</label>
@@ -64,56 +47,73 @@
             <button class="btn-reset">Reset Filter</button>
         </aside>
 
-        <!-- ============================== -->
-        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK -->
         <main class="content-akun">
             
-            <!-- Pencarian -->
             <div class="search-akun-bar">
                 <input type="text" placeholder="Cari Vandal Kuronami, Reaver, Champions dll">
                 <button>Cari</button>
             </div>
 
-            <!-- Grid Produk Akun -->
             <div class="grid-katalog-akun">
                 
                 <!-- Kotak Akun Valo 1 -->
-                <div class="card-katalog-item">
-                    <!-- Ganti src dengan gambar akun Valo dari komputermu -->
-                    <img src="akun-valo-1.jpg" alt="Akun Valorant"> 
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Vandal Solar | Vandal Blackthorn | Phantom Kuronami"
+                    data-harga="Rp 150.000"
+                    data-kode="VALO-01"
+                    data-gambar="images/skin-valo3.jpg"
+                    data-gambarss="images/ss-valo01.jpg,images/ss-valo02.jpg,images/ss-valo03.jpg"
+                    data-spek="Total Skin: 15|Rank: Ascendant|Agent Terbuka: Semua">
+                    
+                    <img src="images/skin-valo3.jpg" alt="Akun Valorant"> 
                     <div class="card-katalog-info">
-                        <h4>Bundle Kuronami | Vandal Reaver | Knife Champions 2024</h4>
-                        <p class="harga-coret">Rp 1.500.000</p>
-                        <p class="harga-asli">Rp 1.350.000</p>
+                        <h4>Vandal Solar | Vandal Blackthorn</h4>
+                        <p class="harga-coret">Rp 300.000</p>
+                        <p class="harga-asli">Rp 150.000</p>
                     </div>
                 </div>
 
                 <!-- Kotak Akun Valo 2 -->
-                <div class="card-katalog-item">
-                    <img src="akun-valo-2.jpg" alt="Akun Valorant">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Bundle Mystbloom | Primordium Phantom"
+                    data-harga="Rp 250.000"
+                    data-kode="VALO-02"
+                    data-gambar="images/skin-valo2.png"
+                    data-gambarss="images/ss-valo-1.jpg,images/ss-valo-2.jpg,images/ss-valo-3.jpg,images/ss-valo-4.jpg"
+                    data-spek="Total Skin: 8|Rank: Imo|Agent Terbuka: Semua">
+                    
+                    <img src="images/skin-valo2.png" alt="Akun Valorant"> 
                     <div class="card-katalog-info">
-                        <h4>Vandal Araxys | Phantom Oni | RGX Blade | Full Agent</h4>
-                        <p class="harga-coret">Rp 800.000</p>
-                        <p class="harga-asli">Rp 749.999</p>
+                        <h4>Bundle Mystbloom | Primordium Phantom</h4>
+                        <p class="harga-coret">Rp 400.000</p>
+                        <p class="harga-asli">Rp 250.000</p>
                     </div>
                 </div>
 
                 <!-- Kotak Akun Valo 3 -->
-                <div class="card-katalog-item">
-                    <img src="akun-valo-3.jpg" alt="Akun Valorant">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Prime 02 Vandal | Dolmirs Vandal | Rogue Vandal | Soverign Phantom | Nocturnum Scythe"
+                    data-harga="Rp 500.000"
+                    data-kode="VALO-03"
+                    data-gambar="images/skin-valo3.jpg"
+                    data-gambarss="images/ss_valo1.png,images/ss_valo2.jpg,images/ss_valo3.png,images/ss_valo4.png,images/ss_valo5.png"
+                    data-spek="Total Skin: 15|Rank: Diamond|Agent Terbuka: Semua">
+                    
+                    <img src="images/skin-valo3.jpg" alt="Akun Valorant"> 
                     <div class="card-katalog-info">
-                        <h4>Akun Smurf | Vandal Prime | Battlepass Max S9</h4>
-                        <p class="harga-coret">Rp 250.000</p>
-                        <p class="harga-asli">Rp 199.999</p>
+                        <h4>Prime 02 Vandal | Dolmirs Vandal | Rogue Vandal | Soverign Phantom | Nocturnum Scythe</h4>
+                        <p class="harga-coret">Rp700.000</p>
+                        <p class="harga-asli">Rp 500.000</p>
                     </div>
                 </div>
-
-                <!-- Tambahkan kotak lainnya sesuai stok akun Valorant yang kamu miliki -->
 
             </div>
         </main>
     </div>
 
+    <!-- Panggil fungsi filter dan fungsi pemindah data -->
+    <script src="script-beli-akun.js"></script>
+    <script src="script-katalog.js"></script>
 </body>
 </html>

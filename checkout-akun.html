@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Akun - Ichigo Store</title>
+    <link rel="stylesheet" href="style.css"> <!-- Untuk font dasar -->
+    <link rel="stylesheet" href="style-checkout.css"> <!-- CSS Khusus -->
+</head>
+<body class="body-checkout">
+
+    <!-- ============================== -->
+    <!-- 1. NAVBAR                      -->
+    <!-- ============================== -->
+
+    <div id="tempat-header"></div>
+
+
+    <!-- ============================== -->
+    <!-- 2. KONTEN UTAMA CHECKOUT       -->
+    <!-- ============================== -->
+    <main class="container-checkout">
+        
+        <!-- BAGIAN KIRI -->
+        <div class="checkout-left">
+            <img id="gambar-checkout" src="images/skinml1.png" alt="Preview Akun" class="checkout-img-main">
+            
+            <div class="checkout-store-info">
+                <p>Ichigo Store menawarkan layanan pembelian akun game pilihan yang aman, terpercaya, dan bergaransi anti-hackback.<br>
+                Bayar dengan nyaman menggunakan E-Wallet (DANA, ShopeePay, QRIS).</p>
+                <p>Dapatkan akun impianmu dalam hitungan menit! Cukup gunakan fitur filter untuk mencari akun idaman Anda, klik akun yang diinginkan untuk memesan dan selesaikan pembayaran, dan data akun (email & password) akan langsung diserahkan sepenuhnya ke tangan Anda.</p>
+                <p>Login ke akun Ichigo Store Anda dan dapatkan akses ke promo menarik lainnya. Belum punya akun Ichigo Store? Daftar sekarang!</p>
+            </div>
+        </div>
+
+        <!-- BAGIAN KANAN -->
+        <div class="checkout-right">
+            
+            <h1 id="judul-checkout" class="checkout-title">Claude Prime | Kagura LuckyBox | Pharsa Collector | Aurora KOF</h1>
+            <p id="kode-checkout" class="checkout-code">Kode Akun : ML01</p>
+            <h2 id="harga-checkout" class="checkout-price">Rp 359.000</h2>
+
+            <div class="checkout-specs">
+                <p>Deskripsi Produk:</p>
+                <ul id="spek-checkout">
+                    <li>Rank Tertinggi: Mythic</li>
+                    <li>Skin Hero: Claude Prime, Kagura LuckyBox, Pharsa Collector, Aurora KOF</li>
+                    <li>Jumlah Skin: 50+</li>
+                    <li>Jumlah Hero: 30+</li>
+                    <li>Harga Asli: Rp 699.999</li>
+                </ul>
+            </div>
+            
+            <!-- Tambahkan id="btn-buka-ss" -->
+            <button id="btn-buka-ss" class="btn-screenshoot">Full ScreenShoot Spek Akun</button>
+
+            <!-- Card Metode Pembayaran -->
+            <div class="checkout-card">
+                <img src="images/label-bayar.png" alt="Label Pembayaran" class="label-gambar-checkout">
+                <div class="checkout-card-body">
+                    <p class="payment-category">E-Wallet</p>
+                    <div class="payment-radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="pembayaran" value="shopeepay">
+                            <img src="images/sopipey.png" alt="ShopeePay" class="icon-pay"> ShopeePay
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="pembayaran" value="qris">
+                            <img src="images/QRIS.png" alt="QRIS" class="icon-pay"> QRIS
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="pembayaran" value="dana">
+                            <img src="images/dana.png" alt="DANA" class="icon-pay"> DANA
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Masukan Data Diri -->
+            <div class="checkout-card">
+                
+                <img src="images/label-pembayaran.png" alt="Label Pembayaran" class="label-gambar-checkout">
+                
+                <div class="checkout-card-body form-grid-2">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </main>
+
+    <!-- ============================== -->
+    <!-- 3. BAR TOTAL & CHECKOUT        -->
+    <!-- ============================== -->
+    <div class="checkout-bottom-wrapper">
+        <div class="bottom-ribbon">
+            <span class="total-text">Total : <span id="total-checkout" class="total-price">Rp 359.000</span></span>
+            <button class="btn-checkout-final">Checkout</button>
+        </div>
+    </div>
+
+    <!-- ============================== -->
+    <!-- 4. FOOTER                      -->
+    <!-- ============================== -->
+    <footer class="footer-checkout">
+        <div class="footer-col brand-col">
+            <img src="logo.png" alt="Logo" class="footer-logo">
+            <p>ICHIGOSTORE</p>
+            <small>© 2026 IchigoStore</small>
+        </div>
+        <div class="footer-col">
+            <h4>Social Media</h4>
+            <div class="social-icons">
+                <span>📷</span> <span>🎵</span> <span>📺</span> <span>🌐</span> <span>📘</span>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Pembayaran</h4>
+            <div class="pay-icons-footer">
+                <img src="icon-shopeepay.png" alt="SPay">
+                <img src="icon-dana.png" alt="DANA">
+                <img src="icon-qris.png" alt="QRIS">
+            </div>
+        </div>
+        <div class="footer-col contact-col">
+            <h4>Kontak kami</h4>
+            <p>support@ichigostore.com</p>
+            <p>WhatsApp +62 812345678</p>
+            <p>Telegram @ichigostore._cs</p>
+        </div>
+    </footer>
+
+
+    <!-- KOTAK POP-UP (MODAL) SCREENSHOT SPEK -->
+    <!-- WADAH POP-UP SCREENSHOT -->
+    <div id="wadah-popup-ss" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="btn-tutup-ss" class="btn-close-modal">X Tutup</button>
+            
+            <!-- Wadah Kosong untuk Galeri, Gambar akan disuntikkan oleh JS ke sini -->
+            <div id="galeri-ss" style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;"></div>
+        </div>
+    </div>
+
+    <!-- KOTAK POP-UP (MODAL) BARCODE PEMBAYARAN BARU -->
+    <div id="wadah-popup-qris" class="modal-overlay" style="display: none;">
+        <div class="modal-content" style="text-align: center;">
+            <h2 style="color: #ffcc00; margin-top: 0;">Scan untuk Membayar</h2>
+            <p id="teks-total-qris" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">Total: Rp 0</p>
+            
+            <!-- Ganti src ini dengan gambar Barcode/QRIS milikmu -->
+            <img src="images/qr.png" alt="QRIS Barcode" style="width: 250px; border-radius: 10px; border: 2px solid #cc0000;">
+            
+            <p style="color: #ccc; font-size: 0.9rem; margin-top: 15px;">Silakan scan menggunakan E-Wallet pilihan Anda.</p>
+            
+            <!-- Tombol Selesai Bayar -->
+            <button id="btn-sudah-bayar" class="btn-screenshoot" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">✅ Saya Sudah Bayar</button>
+            
+            <!-- Tombol Batal -->
+            <button id="btn-batal-bayar" class="btn-close-modal" style="background-color: #555;">Batal</button>
+        </div>
+    </div>
+
+    <!-- Panggil file JS (Jika mau diaktifkan dinamisnya) -->
+    <script src="script-checkout.js"></script>
+    <script src="load-header.js"></script>
+</body>
+</html>

@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="style.css"> <!-- Menggunakan CSS yang sama -->
 </head>
 <body>
-
-    <!-- ========================================== -->
-    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
-    <!-- ========================================== -->
     
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
@@ -20,16 +16,6 @@
         <!-- ============================== -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
-            
-            <div class="filter-group">
-                <label>Rank Tertinggi</label>
-                <select>
-                    <option>Pilih rank tertinggi</option>
-                    <option>Mythical Glory</option>
-                    <option>Mythical Immortal</option>
-                    <option>Mythic</option>
-                </select>
-            </div>
 
             <div class="filter-group">
                 <label>Harga Minimal</label>
@@ -78,41 +64,64 @@
             <div class="grid-katalog-akun">
                 
                 <!-- Kotak Akun 1 -->
-                <div class="card-katalog-item">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Suyou Sasuke | Haya Kakashi | 4 LuckyBox | Amoon Colector"
+                    data-harga="Rp 349.000"
+                    data-kode="ML-01"
+                    data-gambar="images/skinml1.png"
+                    data-gambarss="images/spekml1.png,images/spekml2.png,images/spekml3.png,images/spekml4.png,images/spekml5.png,images/spekml6.png,images/spekml7.png"
+                    data-spek="Rank: IMO 188|Total Skin: 150|Hero: Max">
+                    
                     <!-- Ganti src dengan gambar akun dari komputermu -->
-                    <img src="akun-ml-1.jpg" alt="Akun ML"> 
+                    <img src="images/skinml1.png" alt="Akun ML"> 
                     <div class="card-katalog-info">
-                        <h4>Valir Legend | Alpha Abyss | 6 Luckybox</h4>
-                        <p class="harga-coret">Rp 699.999</p>
-                        <p class="harga-asli">Rp 649.999</p>
+                        <h4>Suyou Sasuke | Haya Kakashi | 4 LuckyBox | Amoon Colector</h4>
+                        <p class="harga-coret">Rp 425.000</p>
+                        <p class="harga-asli">Rp 349.000</p>
                     </div>
                 </div>
-
+                
                 <!-- Kotak Akun 2 -->
-                <div class="card-katalog-item">
-                    <img src="akun-ml-2.jpg" alt="Akun ML">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="YSS Collector"
+                    data-harga="Rp 450.000"
+                    data-kode="ML-02"
+                    data-gambar="images/skinml2.png"
+                    data-gambarss="images/mlspek1.png,images/mlspek2.png,images/mlspek3.png"
+                    data-spek="Rank: Glory 69|Total Skin: 231|Hero: Max">
+                    
+                    <!-- Ganti src dengan gambar akun dari komputermu -->
+                    <img src="images/skinml2.png" alt="Akun ML"> 
                     <div class="card-katalog-info">
-                        <h4>Johnson Legend | Xborg Metro Zero</h4>
-                        <p class="harga-coret">Rp 799.999</p>
-                        <p class="harga-asli">Rp 799.999</p>
+                        <h4>YSS Collector</h4>
+                        <p class="harga-coret">Rp 700.000</p>
+                        <p class="harga-asli">Rp 450.00/p>
                     </div>
                 </div>
 
                 <!-- Kotak Akun 3 -->
-                <div class="card-katalog-item">
-                    <img src="akun-ml-3.jpg" alt="Akun ML">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Ling CC polosan"
+                    data-harga="Rp 120.000"
+                    data-kode="ML-03"
+                    data-gambar="images/skinml3.png"
+                    data-gambarss="images/mls1.png"
+                    data-spek="Rank: Imo 105kin:78|Hero: 82">
+                    
+                    <!-- Ganti src dengan gambar akun dari komputermu -->
+                    <img src="images/skinml3.png" alt="Akun ML"> 
                     <div class="card-katalog-info">
-                        <h4>Alucard Lightborn | Freya Epic</h4>
-                        <p class="harga-coret">Rp 149.999</p>
-                        <p class="harga-asli">Rp 119.999</p>
+                        <h4>YSS Collector</h4>
+                        <p class="harga-coret">Rp 300.000</p>
+                        <p class="harga-asli">Rp 120.000/p>
                     </div>
                 </div>
 
-                <!-- Bisa di-copy-paste terus untuk menambah kotak lainnya -->
 
             </div>
         </main>
     </div>
     <script src="script-beli-akun.js"></script>
+    <script src="script-katalog.js"></script> <!-- TAMBAHKAN BARIS INI -->
 </body>
 </html>

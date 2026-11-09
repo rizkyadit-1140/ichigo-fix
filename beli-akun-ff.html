@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beli Akun Free Fire - Ichigo Store</title>
-    <link rel="stylesheet" href="style.css"> <!-- Tetap pakai CSS yang sama -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- PASTE KODE NAVBAR DARI HALAMAN UTAMA DISINI -->
-    <!-- ========================================== -->
-    
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
         
-        <!-- ============================== -->
-        <!-- BAGIAN KIRI: SIDEBAR FILTER    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KIRI: SIDEBAR FILTER -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
             
@@ -64,9 +58,7 @@
             <button class="btn-reset">Reset Filter</button>
         </aside>
 
-        <!-- ============================== -->
-        <!-- BAGIAN KANAN: KONTEN PRODUK    -->
-        <!-- ============================== -->
+        <!-- BAGIAN KANAN: KONTEN PRODUK -->
         <main class="content-akun">
             
             <!-- Pencarian -->
@@ -79,41 +71,62 @@
             <div class="grid-katalog-akun">
                 
                 <!-- Kotak Akun FF 1 -->
-                <div class="card-katalog-item">
-                    <!-- Ganti src dengan gambar akun FF dari komputermu -->
-                    <img src="akun-ff-1.jpg" alt="Akun FF"> 
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Akun Sultan | Bundle Cobra | SG 2 Ungu | AK Draco Max"
+                    data-harga="Rp 599.999"
+                    data-kode="FF-01"
+                    data-gambar="images/skinff1.png"
+                    data-gambarss="images/spekff1.png"
+                    data-spek="Rank: Heroic|Total Bundle: 50+|Evo Gun: 3 Max">
+                    
+                    <img src="images/skinff1.png" alt="Akun FF"> 
                     <div class="card-katalog-info">
-                        <h4>Akun Sultan | Bundle Cobra | SG 2 Ungu | AK Draco Max</h4>
-                        <p class="harga-coret">Rp 950.000</p>
-                        <p class="harga-asli">Rp 899.999</p>
+                        <h4>Akun Sultan | SG OPM | AK Draco Max</h4>
+                        <p class="harga-coret">Rp 650.000</p>
+                        <p class="harga-asli">Rp 599.999</p>
                     </div>
                 </div>
 
                 <!-- Kotak Akun FF 2 -->
-                <div class="card-katalog-item">
-                    <img src="akun-ff-2.jpg" alt="Akun FF">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="Akun Old | Elite Pass S1 | Bundle Ruok"
+                    data-harga="Rp 800.000"
+                    data-kode="FF-02"
+                    data-gambar="images/skinff2.png"
+                    data-gambarss="images/spekff2.png"
+                    data-spek="Rank: Master Tua|Elite Pass: Old S1-S5|Senjata: Scar Titan">
+                    
+                    <img src="images/skinff2.png" alt="Akun FF">
                     <div class="card-katalog-info">
                         <h4>Akun Old | Elite Pass S1 | Scar Titan | Baju Ruok</h4>
-                        <p class="harga-coret">Rp 1.500.000</p>
-                        <p class="harga-asli">Rp 1.250.000</p>
+                        <p class="harga-coret">Rp 899.999</p>
+                        <p class="harga-asli">Rp 800.000</p>
                     </div>
                 </div>
 
                 <!-- Kotak Akun FF 3 -->
-                <div class="card-katalog-item">
-                    <img src="akun-ff-3.jpg" alt="Akun FF">
+                <div class="card-katalog-item" style="cursor: pointer;"
+                    data-judul="SG Gurun | MP40 Predator | Set Budi01"
+                    data-harga="Rp 199.999"
+                    data-kode="FF-03"
+                    data-gambar="images/skinff3.png"
+                    data-gambarss="images/spekff3.png"
+                    data-spek="Rank: Grandmaster|Bundle: Set Turnamen|Senjata: MP40 Max">
+                    
+                    <img src="images/skinff3.png" alt="Akun FF">
                     <div class="card-katalog-info">
-                        <h4>Akun Spek Turni | MP40 Predatory | Set Budi01</h4>
-                        <p class="harga-coret">Rp 450.000</p>
-                        <p class="harga-asli">Rp 399.999</p>
+                        <h4>SG Gurun | MP40 Predator | Set Budi01</h4>
+                        <p class="harga-coret">Rp 250.000</p>
+                        <p class="harga-asli">Rp 199.999</p>
                     </div>
                 </div>
-
-                <!-- Tambahkan kotak lainnya sesuai stok akun FF yang kamu miliki -->
 
             </div>
         </main>
     </div>
 
+    <!-- Panggil fungsi filter dan fungsi pemindah data -->
+    <script src="script-beli-akun.js"></script>
+    <script src="script-katalog.js"></script> 
 </body>
 </html>
