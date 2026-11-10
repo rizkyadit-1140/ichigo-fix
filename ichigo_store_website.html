@@ -35,10 +35,18 @@
             </div>
             
             <div class="grid-flash">
-                <div class="card-flash-img"><img src="images/sale1.png" alt="Promo Flash Sale 1"></div>
+                <a href="javascript:void(0)" onclick="bukaFlashSale('mlbb', 'Starlight Member')" class="bungkus-kotak-flash-sale">
+                    <div class="card-flash-img"><img src="images/sale1.png" alt="Promo Flash Sale 1"></div>
+                </a>
+                <a href="javascript:void(0)" onclick="bukaFlashSale('freefire', 'Elite Pass')" class="bungkus-kotak-flash-sale">
                 <div class="card-flash-img"><img src="images/sale2.png" alt="Promo Flash Sale 2"></div>
-                <div class="card-flash-img"><img src="images/sale3.png" alt="Promo Flash Sale 3"></div>
-                <div class="card-flash-img"><img src="images/sale4.png" alt="Promo Flash Sale 2"></div>
+                </a>
+                <a href="javascript:void(0)" onclick="bukaFlashSale('mlbb', '350 Diamonds')" class="bungkus-kotak-flash-sale">
+                    <div class="card-flash-img"><img src="images/sale3.png" alt="Promo Flash Sale 3"></div>
+                </a>
+                <a href="javascript:void(0)" onclick="bukaFlashSale('genshin', 'Blessing of the Welkin Moon')" class="bungkus-kotak-flash-sale">
+                    <div class="card-flash-img"><img src="images/sale4.png" alt="Promo Flash Sale 4"></div>
+                </a>
             </div>
         </section>
 
@@ -56,20 +64,36 @@
             <div class="section-title"><img src="images/BannerTop.png" alt="Banner Top Up Game" class="ribbon-topup-full"></div>
 
             <div class="grid-topup">
-                <a href="topup-ml.html" class="card-topup-img"><img src="images/top1.png" alt="Top Up MLBB"></a>
-                <a href="topup-genshin.html" class="card-topup-img"><img src="images/top2.png" alt="Top Up Genshin Impact"></a>
-                <a href="topup-ff.html" class="card-topup-img"><img src="images/top3.png" alt="Top Up Free Fire"></a>
-                <a href="topup-pubg.html" class="card-topup-img"><img src="images/top4.png" alt="Top Up PUBG Mobile"></a>
-                <a href="topup-valorant.html" class="card-topup-img"><img src="images/top5.png" alt="Top Up Valorant"></a>
-                <a href="topup-csgo.html" class="card-topup-img"><img src="images/top6.png" alt="Top Up Counter Strike"></a>
-                <a href="topup-roblox.html" class="card-topup-img"><img src="images/top7.png" alt="Top Up Roblox"></a>
-                <a href="topup-wuwa.html" class="card-topup-img"><img src="images/top8.png" alt="Top Up wuthering waves"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('mlbb')" class="card-topup-img"><img src="images/top1.png" alt="Top Up MLBB"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('genshin')" class="card-topup-img"><img src="images/top2.png" alt="Top Up Genshin Impact"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('freefire')" class="card-topup-img"><img src="images/top3.png" alt="Top Up Free Fire"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('pubgm')" class="card-topup-img"><img src="images/top4.png" alt="Top Up PUBG Mobile"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('valorant')" class="card-topup-img"><img src="images/top5.png" alt="Top Up Valorant"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('cs2')" class="card-topup-img"><img src="images/top6.png" alt="Top Up Counter Strike"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('roblox')" class="card-topup-img"><img src="images/top7.png" alt="Top Up Roblox"></a>
+                <a href="javascript:void(0)" onclick="bukaTopup('wuwa')" class="card-topup-img"><img src="images/top8.png" alt="Top Up wuthering waves"></a>
             </div>
         </section>
 
     </main>
     <script src="load-header.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        function bukaTopup(idGame) {
+            // Simpan ID game yang diklik ke Local Storage
+            localStorage.setItem('game_terpilih', idGame);
+            
+            // Pindah ke file HTML "Satu Etalase Ajaib"
+            window.location.href = 'halaman-topup.html';
+        }
+        function bukaFlashSale(idGame, namaItem) {
+            localStorage.setItem('game_terpilih', idGame);
+            localStorage.setItem('item_preselect', namaItem); // Titip nama item ke memori
+            window.location.href = 'halaman-topup.html';
+        }
+    </script>
+    
 
 </body>
 </html>

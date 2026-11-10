@@ -1,22 +1,67 @@
-<header class="navbar-checkout">
-<div class="nav-logo">
-        <!-- Ganti src dengan logo Ichigo Store milikmu -->
+<h<header class="navbar-checkout">
+    <div class="nav-logo">
         <img src="images/logo.png" alt="Ichigo Store" class="logo-img">
     </div>
-    <div class="nav-search">
-        <input type="text" placeholder="Cari produk di sini">
-        <button class="btn-search-nav">
-            <!-- Ikon kaca pembesar (SVG) -->
+    <!-- WADAH PENCARIAN DIPERBARUI -->
+    <div class="nav-search" id="wadah-pencarian" style="position: relative; overflow: visible;">
+        <input type="text" id="input-pencarian" placeholder="Cari produk di sini" autocomplete="off">
+        <div class="btn-search-nav">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-        </button>
+        </div>
+        <!-- HASIL PENCARIAN (Disembunyikan) -->
+        <div id="hasil-pencarian" class="search-dropdown" style="display: none;"></div>
     </div>
     <nav class="nav-links">
         <a href="ichigo_store_website.html">Home</a>
         <a href="#">Jual Akun</a>
         <a href="riwayat.html">Riwayat</a>
-        <button class="btn-masuk">Masuk</button>
+        <button class="btn-masuk" id="btn-masuk-header">Masuk</button>
     </nav>
+
+    <div id="modal-login" class="modal-overlay-login" style="display: none;">
+        <div class="modal-content-login">
+            <!-- Tombol Silang (X) Merah -->
+            <span class="close-login" id="close-login-btn">&times;</span>
+            
+            <!-- Sisi Kiri (Branding Gelap) -->
+            <div class="modal-login-left">
+                <img src="images/logo.png" alt="Ichigo Store" class="login-logo">
+                <h2>MENGAPA GABUNG ICHIGOSTORE?</h2>
+                <p>Daftar dan dapatkan, penawaran spesial, dan keuntungan bermain game</p>
+            </div>
+            
+            <!-- Sisi Kanan (Formulir Terang) -->
+            <!-- Sisi Kanan (Formulir Terang) -->
+            <div class="modal-login-right">
+                <!-- Tambahkan id="auth-title" -->
+                <h2 class="login-title" id="auth-title">Login</h2>
+                
+                <div class="login-form-group">
+                    <label>Email</label>
+                    <!-- Tambahkan id="auth-email" -->
+                    <input type="email" id="auth-email" placeholder="Masukkan email...">
+                </div>
+                
+                <div class="login-form-group">
+                    <label>Kata Sandi</label>
+                    <!-- Tambahkan id="auth-password" -->
+                    <input type="password" id="auth-password" placeholder="***">
+                </div>
+                
+                <!-- Tambahkan id="forgot-pw-link" -->
+                <a href="#" class="forgot-password" id="forgot-pw-link">Lupa Kata Sandi?</a>
+                
+                <!-- Tambahkan id="btn-submit-auth" -->
+                <button class="btn-submit-login" id="btn-submit-auth">Masuk</button>
+                
+                <!-- Tambahkan id pada teks dan link pendaftaran -->
+                <p class="register-link" id="auth-switch-text">
+                    Belum punya akun? <a href="#" id="auth-switch-link">Daftar sekarang</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </header>

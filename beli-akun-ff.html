@@ -8,23 +8,14 @@
 </head>
 <body>
 
+    <div id="tempat-header"></div> <!-- Panggil Header Otomatis -->
+
     <!-- Wadah Utama Halaman Katalog Akun -->
     <div class="container-akun-katalog">
         
         <!-- BAGIAN KIRI: SIDEBAR FILTER -->
         <aside class="sidebar-filter">
             <h3>Filter</h3>
-            
-            <div class="filter-group">
-                <label>Rank Tertinggi</label>
-                <select>
-                    <option>Pilih Rank Tertinggi</option>
-                    <option>Grandmaster</option>
-                    <option>Master</option>
-                    <option>Heroic / Master Tua</option>
-                    <option>Diamond ke Bawah</option>
-                </select>
-            </div>
 
             <div class="filter-group">
                 <label>Harga Minimal</label>
@@ -111,7 +102,7 @@
                     data-kode="FF-03"
                     data-gambar="images/skinff3.png"
                     data-gambarss="images/spekff3.png"
-                    data-spek="Rank: Grandmaster|Bundle: Set Turnamen|Senjata: MP40 Max">
+                    data-spek="Rank: Grandmaster|Senjata: MP40 Max">
                     
                     <img src="images/skinff3.png" alt="Akun FF">
                     <div class="card-katalog-info">
@@ -128,5 +119,6 @@
     <!-- Panggil fungsi filter dan fungsi pemindah data -->
     <script src="script-beli-akun.js"></script>
     <script src="script-katalog.js"></script> 
+    <script src="load-header.js"></script> <!-- Panggil Header Otomatis -->
 </body>
 </html>

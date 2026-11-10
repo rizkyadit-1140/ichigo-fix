@@ -70,13 +70,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     transition: background-color 0.2s;
 }
 
-.btn-search-nav:hover {
-    background-color: #cc0000; /* Warna berubah saat disorot mouse */
-}
 .nav-links {
     display: flex;
     align-items: center;
@@ -556,53 +552,7 @@ main {
     transform: translateY(-8px);
     filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
 }
-/* ============================== */
-/* MODIFIKASI BAGIAN JOKI GAME    */
-/* ============================== */
 
-/* 1. Gambar Banner Pita Joki Utuh */
-.ribbon-joki-full {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 25px;
-}
-
-/* 2. Area Grid Joki (Bentuk Katalog Tersusun) */
-.grid-joki {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Memaksa produk turun ke baris baru jika layar sempit */
-    justify-content: flex-start; 
-    padding-bottom: 25px;
-}
-
-/* 3. Desain Kotak Gambar Produk Joki */
-.card-joki-img {
-    /* Samakan angka lebar ini dengan produk Top Up (misal 160px) 
-       atau sesuaikan sendiri jika gambar joki-mu ukurannya berbeda */
-    width: 280px; 
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.card-joki-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    pointer-events: none;
-}
-
-/* Efek saat mouse mengarah ke gambar produk joki */
-.card-joki-img:hover {
-    transform: translateY(-8px);
-    filter: drop-shadow(0 12px 15px rgba(230, 0, 0, 0.6));
-}
 /* ============================== */
 /* HALAMAN KATALOG BELI AKUN      */
 /* ============================== */
@@ -860,3 +810,136 @@ main {
     color: #888;
     font-size: 0.85rem;
 }
+/* === DROPDOWN PENCARIAN LIVE === */
+.search-dropdown {
+    position: absolute;
+    top: 115%; /* Muncul tepat di bawah kotak input */
+    left: 0;
+    width: 100%;
+    background-color: #1a0505; /* Mengikuti tema utama Ichigo Store */
+    border: 1px solid #3d0a0a;
+    border-radius: 10px;
+    max-height: 350px;
+    overflow-y: auto;
+    z-index: 9999;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.7);
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    border-bottom: 1px solid #3d0a0a;
+    cursor: pointer;
+    transition: 0.2s;
+    text-decoration: none;
+    color: white;
+}
+
+.search-item:hover {
+    background-color: #3d0a0a;
+    border-left: 4px solid #cc0000;
+}
+
+.search-item img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.search-info h4 {
+    font-size: 14px;
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+.search-info p {
+    font-size: 11px;
+    color: #ffcc00; /* Warna aksen dari Ichigo Store */
+    font-weight: bold;
+}
+
+.search-empty {
+    padding: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #ccc;
+}
+
+/* === MODAL LOGIN KHUSUS === */
+.modal-overlay-login {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Latar belakang gelap transparan */
+    display: flex; justify-content: center; align-items: center;
+    z-index: 10000;
+}
+
+.modal-content-login {
+    background: #fffdfd; /* Warna putih dengan sedikit semburat pink/hangat */
+    border-radius: 20px;
+    display: flex;
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* Memberi padding luar agar sisi kiri terlihat seperti kotak terpisah */
+    padding: 10px; 
+}
+
+/* Tombol X Merah */
+.close-login {
+    position: absolute;
+    top: 15px; right: 25px;
+    font-size: 40px; color: #cc0000;
+    cursor: pointer; font-weight: bold;
+    line-height: 1; z-index: 10;
+    transition: transform 0.2s;
+}
+.close-login:hover { transform: scale(1.1); }
+
+/* Sisi Kiri (Merah Gelap) */
+.modal-login-left {
+    background-color: #3d0a0a; /* Ganti dengan URL gambar background karaktermu jika ada: background: url('bg-karakter.jpg') center/cover; */
+    width: 45%; 
+    padding: 40px 20px;
+    color: white; text-align: center;
+    display: flex; flex-direction: column; align-items: center;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.modal-login-left .login-logo { width: 180px; margin-bottom: 25px; }
+.modal-login-left h2 { font-size: 20px; margin-bottom: 10px; font-weight: 900; line-height: 1.3;}
+.modal-login-left p { font-size: 13px; line-height: 1.5; font-weight: 600; color: #eee; }
+
+/* Sisi Kanan (Formulir) */
+.modal-login-right {
+    width: 55%; padding: 40px 50px; color: #333;
+    display: flex; flex-direction: column; justify-content: center;
+}
+.login-title { text-align: center; font-size: 24px; margin-bottom: 30px; color: #000; font-weight: bold; }
+
+.login-form-group { margin-bottom: 15px; }
+.login-form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: #000; }
+.login-form-group input {
+    width: 100%; padding: 12px;
+    background-color: #e0e0e0; border: none; 
+    border-radius: 5px; font-size: 14px; outline: none;
+}
+
+.forgot-password { color: #cc0000; font-size: 12px; text-decoration: underline; margin-bottom: 20px; align-self: flex-start;}
+
+.btn-submit-login {
+    background-color: #ff9900; color: #000;
+    border: none; padding: 12px; border-radius: 8px;
+    font-weight: bold; font-size: 16px; cursor: pointer;
+    width: 100%; margin-bottom: 20px;
+    transition: background 0.3s;
+}
+.btn-submit-login:hover { background-color: #e68a00; }
+
+.register-link { text-align: center; font-size: 12px; color: #000; }
+.register-link a { color: #cc0000; text-decoration: underline; }

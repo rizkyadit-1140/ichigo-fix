@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Up Game - Ichigo Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-topup.css">
+</head>
+<body>
+    <!-- 1. Panggil Header Otomatis -->
+    <div id="tempat-header"></div>
+
+    <!-- Layout Utama -->
+    <div class="topup-container">
+        
+        <!-- KOLOM 1: Info Game -->
+        <div class="game-info">
+            <div class="panel">
+                <img id="game-logo" src="" alt="Logo Game" class="game-banner">
+                <div class="badges">
+                    <span><i class="fas fa-check-circle"></i> Distributor Resmi</span>
+                    <span><i class="fas fa-bolt"></i> Top Up Instan</span>
+                </div>
+                <h2 id="game-title" style="margin-top: 15px;">-</h2>
+                <p id="game-publisher" class="publisher">-</p>
+                <p class="game-desc" id="game-desc-1">-</p>
+                <p class="game-desc">Bayar dengan nyaman menggunakan E-Wallet, QRIS, Transfer Bank, SMS, OTC non-Bank, hingga Kartu Debit/Kredit.</p>
+                <p class="game-desc" id="game-desc-2">-</p>
+            </div>
+        </div>
+
+        <!-- KOLOM 2: Langkah Top-Up -->
+        <div class="steps-container">
+            
+            <!-- Step 1: Input -->
+            <div class="panel">
+                <div class="step-header">
+                    <div class="step-number">1</div> <span id="input-title">Masukkan ID</span>
+                </div>
+                <button class="help-btn"><i class="fas fa-question-circle"></i> Where To Find?</button>
+                <div class="input-group" id="input-fields-container">
+                    <!-- Input fields di-generate oleh JS -->
+                </div>
+                <p class="note" id="input-note">-</p>
+            </div>
+
+            <!-- Step 2: Pilih Jumlah -->
+            <div class="panel">
+                <div class="step-header">
+                    <div class="step-number">2</div> Pilih Jumlah
+                </div>
+                <div class="diamond-grid" id="packages-container">
+                    <!-- Pilihan top up di-generate oleh JS -->
+                </div>
+            </div>
+
+            <!-- Step 3: Pembayaran -->
+            <div class="panel">
+                <div class="step-header">
+                    <div class="step-number">3</div> Pilih Metode Pembayaran
+                </div>
+                <div class="payment-layout">
+                    <div class="pay-methods">
+                        <!-- Metode statis untuk contoh, harga di-update oleh JS -->
+                        <div class="pay-card" data-payment="OVO">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logo_ovo_purple.svg" alt="OVO">
+                            <div class="pay-info">
+                                <h4>OVO</h4>
+                                <p class="pay-price-label">-</p>
+                            </div>
+                        </div>
+                        <div class="pay-card" data-payment="QRIS">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" alt="QRIS">
+                            <div class="pay-info">
+                                <h4>QRIS</h4>
+                                <p class="pay-price-label">-</p>
+                            </div>
+                        </div>
+                         <div class="pay-card" data-payment="DANA">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="Dana">
+                            <div class="pay-info">
+                                <h4>Dana</h4>
+                                <p class="pay-price-label">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KOLOM 3: Checkout -->
+        <div class="checkout-container">
+            <div class="panel">
+                <h3 style="margin-bottom: 15px; border-bottom: 1px solid #7a1b22; padding-bottom: 10px;">Checkout</h3>
+                
+                <div class="checkout-item">
+                    <span>Item</span>
+                    <span id="checkout-item-name">-</span>
+                </div>
+                <div class="checkout-item">
+                    <span>Payment</span>
+                    <span id="checkout-payment-name">-</span>
+                </div>
+                
+                <input type="email" placeholder="Alamat Email (opsional)" class="email-input">
+                <p class="email-note">Harap mengisi email apabila ingin bukti pembayaran</p>
+                
+                <div class="total-price">
+                    <span>Total</span>
+                    <span id="checkout-total-price">-</span>
+                </div>
+                
+                <button class="btn-beli" id="btn-beli">Beli Sekarang</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script Data Topup -->
+    <script src="data-topup.js"></script>
+    <script src="load-header.js"></script>
+</body>
+</html>
