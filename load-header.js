@@ -20,19 +20,21 @@ function inisialisasiPencarianLive() {
     // 1. DATABASE PENCARIAN
     const dataPencarian = [
         // --- DAFTAR TOP UP ---
-        { judul: "Mobile Legends", tipe: "Top Up Diamond", gambar: "images/top1.png", aksi: "topup", idGame: "mlbb" },
-        { judul: "Free Fire", tipe: "Top Up Diamond", gambar: "images/top3.png", aksi: "topup", idGame: "freefire" },
+    { judul: "Mobile Legends (ML)", tipe: "Top Up Diamond", gambar: "images/top1.png", aksi: "topup", idGame: "mlbb" },
+        { judul: "Free Fire (FF)", tipe: "Top Up Diamond", gambar: "images/top3.png", aksi: "topup", idGame: "freefire" },
         { judul: "PUBG Mobile", tipe: "Top Up UC", gambar: "images/top4.png", aksi: "topup", idGame: "pubgm" },
         { judul: "Valorant", tipe: "Top Up VP", gambar: "images/top5.png", aksi: "topup", idGame: "valorant" },
         { judul: "Genshin Impact", tipe: "Top Up Crystal", gambar: "images/top2.png", aksi: "topup", idGame: "genshin" },
         { judul: "Roblox", tipe: "Top Up Robux", gambar: "images/top7.png", aksi: "topup", idGame: "roblox" },
+        { judul: "Counter-Strike 2 (CSGO)", tipe: "Top Up Steam Wallet", gambar: "images/top6.png", aksi: "topup", idGame: "cs2" },
+        { judul: "Wuthering Waves (Wuwa)", tipe: "Top Up Lunites", gambar: "images/top8.png", aksi: "topup", idGame: "wuwa" },
         
         // --- DAFTAR BELI AKUN ---
-        { judul: "Mobile Legends", tipe: "Beli Akun", gambar: "images/akun2.png", aksi: "link", url: "beli-akun-ml.html" },
-        { judul: "Free Fire", tipe: "Beli Akun", gambar: "images/akun3.png", aksi: "link", url: "beli-akun-ff.html" },
+        { judul: "Mobile Legends (MLBB)", tipe: "Beli Akun", gambar: "images/akun2.png", aksi: "link", url: "beli-akun-ml.html" },
+        { judul: "Free Fire (FF)", tipe: "Beli Akun", gambar: "images/akun3.png", aksi: "link", url: "beli-akun-ff.html" },
         { judul: "PUBG Mobile", tipe: "Beli Akun", gambar: "images/akun5.png", aksi: "link", url: "beli-akun-pubg.html" },
         { judul: "Valorant", tipe: "Beli Akun", gambar: "images/akun4.png", aksi: "link", url: "beli-akun-valo.html" },
-        { judul: "One Piece Bounty Rush", tipe: "Beli Akun", gambar: "images/akun1.png", aksi: "link", url: "beli-akun-opbr.html" }
+        { judul: "One Piece Bounty Rush (OPBR)`", tipe: "Beli Akun", gambar: "images/akun1.png", aksi: "link", url: "beli-akun-opbr.html" }
     ];
 
     // 2. LOGIKA MESIN PENCARI
@@ -210,3 +212,16 @@ function inisialisasiModalLogin() {
         });
     }
 }
+
+document.querySelectorAll('.nav-scroll-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('data-target');
+        const elemenTujuan = document.getElementById(targetId);
+
+        // Jika elemen tujuan ada di halaman yang sedang dibuka sekarang, langsung scroll halus!
+        if (elemenTujuan) {
+            e.preventDefault();
+            elemenTujuan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});

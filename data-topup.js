@@ -323,12 +323,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('checkout-total-price').innerText = hargaTerpilih > 0 ? formatRp(hargaTerpilih) : "-";
     }
 
-    // f. Tombol Beli
+    // f. Tombol Beli (Cek Login -> Validasi Input -> Buka Modal QRIS)
+    const wadahQrisTopup = document.getElementById('wadah-popup-qris-topup');
+    const btnBatalTopup = document.getElementById('btn-batal-bayar-topup');
+    const btnSudahBayarTopup = document.getElementById('btn-sudah-bayar-topup');
+
     document.getElementById('btn-beli').addEventListener('click', () => {
+        // 1. CEK LOGIN PALING PERTAMA
+        const userAktif = localStorage.getItem('ichigo_user_aktif');
+        if (!userAktif) {
+            alert('⚠️ Silakan Login terlebih dahulu sebelum melakukan Top Up!');
+            const modalLogin = document.getElementById('modal-login');
+            if (modalLogin) modalLogin.style.display = 'flex';
+            return;
+        }
+
+        // 2. VALIDASI ID GAME, NOMINAL, & PEMBAYARAN
         const input1 = document.getElementById('input-1');
+        const input2 = document.getElementById('input-2');
         
-        if (!input1 || input1.value === "") {
+        if (!input1 || input1.value.trim() === "") {
             alert("Harap masukkan ID Pengguna!");
+            return;
+        }
+        // Jika game punya input ke-2 (seperti Server ID MLBB atau Tagline Valorant)
+        if (input2 && input2.tagName === 'INPUT' && input2.value.trim() === "") {
+            alert("Harap lengkapi ID Server / Tagline!");
             return;
         }
         if (hargaTerpilih === 0) {
@@ -340,7 +360,54 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        alert(`Pembelian Sukses!\nItem: ${itemTerpilih}\nID: ${input1.value}\nBayar via: ${metodeTerpilih}\nTotal: ${formatRp(hargaTerpilih)}`);
+        // 3. TAMPILKAN POP-UP QRIS
+        const hargaRupiah = "Rp " + hargaTerpilih.toLocaleString('id-ID');
+        document.getElementById('teks-total-qris-topup').innerText = 'Total Tagihan: ' + hargaRupiah;
+        wadahQrisTopup.style.display = 'flex';
     });
+
+    if (btnBatalTopup) {
+        btnBatalTopup.addEventListener('click', () => {
+            wadahQrisTopup.style.display = 'none';
+        });
+    }
+
+    if (btnSudahBayarTopup) {
+        btnSudahBayarTopup.addEventListener('click', () => {
+            const userAktif = localStorage.getItem('ichigo_user_aktif');
+            const input1 = document.getElementById('input-1').value.trim();
+            const input2El = document.getElementById('input-2');
+            
+            // Gabungkan ID dan Server jika ada (misal: 20002910200 / 20202)
+            const idLengkap = input2El && input2El.value.trim() !== "" 
+                ? `${input1} / ${input2El.value.trim()}` 
+                : input1;
+
+            // Buat kode transaksi acak (misal: TU-MWPQR4W5)
+            const kodeAcak = 'TU-' + Math.random().toString(36).substring(2, 10).toUpperCase();
+            const hargaRupiah = "Rp " + hargaTerpilih.toLocaleString('id-ID');
+
+            // Simpan ke Riwayat sesuai format kartu riwayat
+            const pesananTopup = {
+                user: userAktif,
+                judul: `Top Up ${dataGame.judul} - ${itemTerpilih}`,
+                kode: kodeAcak,
+                jenis: 'Top Up',
+                idTujuan: idLengkap,
+                pembayaran: metodeTerpilih.toUpperCase(),
+                harga: hargaRupiah,
+                tanggal: new Date().toLocaleDateString('id-ID'),
+                status: 'Selesai'
+            };
+
+            let daftarRiwayat = JSON.parse(localStorage.getItem('data_riwayat')) || [];
+            daftarRiwayat.push(pesananTopup);
+            localStorage.setItem('data_riwayat', JSON.stringify(daftarRiwayat));
+
+            wadahQrisTopup.style.display = 'none';
+            alert('✅ Top Up Berhasil Dikonfirmasi! Pesanan masuk ke Riwayat.');
+            window.location.href = 'riwayat.html';
+        });
+    }
 
 });

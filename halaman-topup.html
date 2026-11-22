@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-topup.css">
+    <link rel="stylesheet" href="style-checkout.css">
 </head>
 <body>
     <!-- 1. Panggil Header Otomatis -->
@@ -117,6 +118,21 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- KOTAK POP-UP (MODAL) BARCODE PEMBAYARAN QRIS -->
+    <div id="wadah-popup-qris-topup" class="modal-overlay" style="display: none;">
+        <div class="modal-content" style="text-align: center;">
+            <h2 style="color: #ffcc00; margin-top: 0;">Scan untuk Membayar</h2>
+            <p id="teks-total-qris-topup" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 15px;">Total: Rp 0</p>
+            
+            <img src="images/qr.png" alt="QRIS Barcode" style="width: 250px; border-radius: 10px; border: 2px solid #cc0000;">
+            
+            <p style="color: #ccc; font-size: 0.9rem; margin-top: 15px;">Silakan scan menggunakan E-Wallet pilihan Anda.</p>
+            
+            <button id="btn-sudah-bayar-topup" class="btn-beli" style="width: 100%; margin-top: 10px; margin-bottom: 10px;">✅ Saya Sudah Bayar</button>
+            <button id="btn-batal-bayar-topup" style="width: 100%; background-color: #555; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold;">Batal</button>
+        </div>
     </div>
 
     <!-- Script Data Topup -->
