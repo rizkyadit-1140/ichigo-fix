@@ -948,45 +948,131 @@ main {
 .register-link a { color: #cc0000; text-decoration: underline; }
 
 /* --- FOOTER GLOBAL --- */
+/* --- FOOTER GLOBAL --- */
 .footer-checkout {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: #110202;
-    border-top: 1px solid #3d0a0a;
-    padding: 40px 50px;
-    gap: 20px;
-    color: #f5f5dc;
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+    background-color: #3d0407;
+    border-top: 1px solid #5a1010;
+    padding: 45px 60px;
+    gap: 30px;
+    color: #ffffff;
+    align-items: start;
 }
+
 .footer-col h4 {
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1rem;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
 }
-.brand-col { text-align: center; }
-.footer-logo { height: 40px; margin-bottom: 10px; }
-.brand-col p { margin: 0; font-weight: bold; font-size: 1.1rem; }
-.brand-col small { color: #666; }
-.social-icons span {
-    font-size: 1.2rem;
-    margin-right: 10px;
-    cursor: pointer;
-}
-.pay-icons-footer {
+
+/* Kolom 1: Brand */
+.brand-col {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-.pay-icons-footer img { height: 25px; border-radius: 3px; }
+
+.footer-logo {
+    height: 75px;
+    width: auto;
+    margin-bottom: 8px;
+}
+
+.brand-col p {
+    margin: 0 0 4px 0;
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.brand-col small {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+}
+
+/* Kolom 2: Social Media */
+.social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-item svg {
+    flex-shrink: 0;
+}
+
+.social-item:hover {
+    color: #ffcc00;
+    transform: translateX(4px);
+}
+
+/* Kolom 3: Pembayaran (Susunan 2 atas, 1 bawah kiri) */
+.pay-icons-footer {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    row-gap: 15px;      /* Jarak atas-bawah antar logo */
+    column-gap: 18px;   /* Jarak kiri-kanan antar logo */
+    align-items: center;
+}
+
+.logo-spay {
+    height: 45px;       /* Ubah angka ini untuk membesarkan/mengecilkan ShopeePay */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-dana {
+    height: 60px;       /* Ubah angka ini untuk membesarkan/mengecilkan DANA */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-qris {
+    height: 35px;       /* Ubah angka ini untuk membesarkan/mengecilkan QRIS */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Kolom 4: Kontak */
 .contact-col p {
-    margin: 0 0 8px 0;
-    font-size: 0.9rem;
-    color: #ccc;
+    margin: 0 0 12px 0;
+    font-size: 1rem;
+    color: #ffffff;
 }
 
 @media (max-width: 900px) {
-    .footer-checkout { grid-template-columns: 1fr 1fr; padding: 30px 20px; }
-}
-@media (max-width: 500px) {
-    .footer-checkout { grid-template-columns: 1fr; }
+    .footer-checkout { grid-template-columns: 1fr 1fr; padding: 35px 25px; }
 }
 
+@media (max-width: 550px) {
+    .footer-checkout { grid-template-columns: 1fr; }
+}
+.social-item i {
+    width: 22px;
+    text-align: center;
+    font-size: 1.15rem;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#tempat-footer {
+    margin-top: auto;
+}

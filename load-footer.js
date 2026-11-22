@@ -1,18 +1,15 @@
-// ==========================================
-// LOAD FOOTER OTOMATIS KE SEMUA HALAMAN
-// ==========================================
-
 const FOOTER_FALLBACK = `
 <footer class="footer-checkout">
     <div class="footer-col brand-col">
-        <img src="images/logo.png" alt="Logo" class="footer-logo">
-        <p>ICHIGOSTORE</p>
-        <small>© 2026 IchigoStore</small>
+        <img src="images/logo.png" alt="Logo IchigoStore" class="footer-logo">
+        <small>&copy; 2026 IchigoStore</small>
     </div>
     <div class="footer-col">
         <h4>Social Media</h4>
-        <div class="social-icons">
-            <span>📷</span> <span>🎵</span> <span>📺</span> <span>🌐</span> <span>📘</span>
+        <div class="social-list">
+            <a href="#" class="social-item"><i class="fab fa-instagram"></i> @ichigo_store</a>
+            <a href="#" class="social-item"><i class="fab fa-tiktok"></i> @ichigo.store</a>
+            <a href="#" class="social-item"><i class="fab fa-facebook-f"></i> ichigostore</a>
         </div>
     </div>
     <div class="footer-col">
@@ -41,7 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!response.ok) throw new Error("HTTP " + response.status);
         htmlFooter = await response.text();
     } catch (error) {
-        console.warn("Gagal memuat footer.html, memakai footer cadangan:", error);
         htmlFooter = FOOTER_FALLBACK;
     }
 
