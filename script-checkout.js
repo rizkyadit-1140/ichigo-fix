@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    function cekStatusAkunCheckout() {
+    const kodeTersimpan = localStorage.getItem('simpan_kode');
+    const akunTerjual = JSON.parse(localStorage.getItem('akun_terjual')) || [];
+
+    if (kodeTersimpan && akunTerjual.includes(kodeTersimpan)) {
+        alert('⚠️ Akun ini sudah terjual dan tidak dapat dibeli kembali!');
+        window.location.replace('ichigo_store_website.html');
+        return true;
+    }
+    return false;
+    }
+
+    // Jalankan saat halaman dimuat maupun saat tombol Back mouse ditekan
+    window.addEventListener('pageshow', () => {
+        cekStatusAkunCheckout();
+    });
     
     const judul = localStorage.getItem('simpan_judul');
     const harga = localStorage.getItem('simpan_harga');
@@ -57,35 +74,73 @@ document.addEventListener('DOMContentLoaded', () => {
         btnTutupSS.addEventListener('click', () => wadahSS.style.display = 'none');
     }
 
-    // LOGIKA CHECKOUT & QRIS
+   // LOGIKA CHECKOUT & QRIS
     const btnCheckoutFinal = document.querySelector('.btn-checkout-final');
     const wadahQris = document.getElementById('wadah-popup-qris');
     const btnBatalBayar = document.getElementById('btn-batal-bayar');
     const btnSudahBayar = document.getElementById('btn-sudah-bayar');
     
     if (btnCheckoutFinal) {
-        btnCheckoutFinal.addEventListener('click', () => {
-            const email = document.querySelector('input[type="email"]').value;
+        btnCheckoutFinal.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 1. CEK LOGIN DULU (Jika belum login, langsung berhenti di sini!)
+           // 1. CEK LOGIN DULU
+            const userAktif = localStorage.getItem('ichigo_user_aktif');
+            if (!userAktif) {
+                alert('⚠️ Silakan Login terlebih dahulu sebelum melakukan Checkout!');
+                const modalLogin = document.getElementById('modal-login');
+                if (modalLogin) modalLogin.style.display = 'flex';
+                return;
+            }
+
+            // 2. CEK APAKAH AKUN SUDAH TERJUAL (Cegah beli ulang lewat tombol Back)
+            if (cekStatusAkunCheckout()) return;
+            
+
+            // 2. VALIDASI PEMBAYARAN & EMAIL (Hanya jalan jika SUDAH login)
+            const email = document.getElementById('email-pembeli').value.trim();
             let metodePembayaran = '';
             document.querySelectorAll('input[name="pembayaran"]').forEach(radio => {
                 if (radio.checked) metodePembayaran = radio.value;
             });
 
-            if (!metodePembayaran) return alert('Pilih E-Wallet terlebih dahulu!');
-            if (!email) return alert('Harap isi Email!');
+            if (!metodePembayaran) {
+                alert('Pilih E-Wallet terlebih dahulu!');
+                return;
+            }
+            if (!email) {
+                alert('Harap isi Email!');
+                return;
+            }
 
+            // 3. MUNCULKAN QRIS
             document.getElementById('teks-total-qris').innerText = 'Total Tagihan: ' + document.getElementById('harga-checkout').innerText;
             wadahQris.style.display = 'flex';
         });
     }
 
-    if (btnBatalBayar) btnBatalBayar.addEventListener('click', () => wadahQris.style.display = 'none');
+    if (btnBatalBayar) {
+        btnBatalBayar.addEventListener('click', () => wadahQris.style.display = 'none');
+    }
 
     if (btnSudahBayar) {
         btnSudahBayar.addEventListener('click', () => {
+            const userAktif = localStorage.getItem('ichigo_user_aktif');
+            let metodePembayaran = 'QRIS';
+            document.querySelectorAll('input[name="pembayaran"]').forEach(radio => {
+                if (radio.checked) metodePembayaran = radio.value.toUpperCase();
+            });
+
+            const teksKode = document.getElementById('kode-checkout').innerText;
+            const kodeBersih = teksKode.replace('Kode Akun :', '').trim();
+
             const pesananBaru = {
+                user: userAktif, // <-- Penanda pemilik transaksi
                 judul: document.getElementById('judul-checkout').innerText,
-                kode: document.getElementById('kode-checkout').innerText,
+                kode: kodeBersih,
+                jenis: 'Akun',
+                pembayaran: metodePembayaran,
                 harga: document.getElementById('harga-checkout').innerText,
                 tanggal: new Date().toLocaleDateString('id-ID'), 
                 status: 'Selesai'
@@ -94,8 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
             daftarRiwayat.push(pesananBaru);
             localStorage.setItem('data_riwayat', JSON.stringify(daftarRiwayat));
 
+            let akunTerjual = JSON.parse(localStorage.getItem('akun_terjual')) || [];
+            if (kodeBersih && !akunTerjual.includes(kodeBersih)) {
+                akunTerjual.push(kodeBersih);
+                localStorage.setItem('akun_terjual', JSON.stringify(akunTerjual));
+            }
+
             wadahQris.style.display = 'none';
             alert('✅ Pembayaran Berhasil Dikonfirmasi! Pesanan masuk ke Riwayat.');
+            window.location.href = 'riwayat.html';
         });
     }
 });

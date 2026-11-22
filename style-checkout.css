@@ -145,18 +145,14 @@
 .icon-pay { height: 20px; border-radius: 3px; }
 
 /* Form Data Diri */
-.form-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-.form-group label {
+/* email cekout*/
+.form-group label, .input-group label {
     display: block;
     font-size: 0.9rem;
     margin-bottom: 8px;
     font-weight: bold;
 }
-.form-group input {
+.form-group input, .input-group input {
     width: 100%;
     background-color: #1a0303;
     border: 1px solid #3d0a0a;

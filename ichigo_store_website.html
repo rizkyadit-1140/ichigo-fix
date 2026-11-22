@@ -9,6 +9,7 @@
 
 <body>
     <div id="tempat-header"></div>
+    
 
     <header class="banner-slider">
         <div class="slider-container" id="sliderContainer">
@@ -53,11 +54,13 @@
         <section class="section">
             <div class="section-title"><img src="images/bannerakunfix.png" alt="Banner Beli Akun" class="ribbon-akun-full"></div>
             <div class="grid-akun">
-                <a href="beli-akun-opbr.html" class="card-akun-img"><img src="images/akun1.png" alt="Akun OPBR"></a>
-                <a href="beli-akun-ml.html" class="card-akun-img"><img src="images/akun2.png" alt="Akun MLBB"></a>
-                <a href="beli-akun-ff.html" class="card-akun-img"><img src="images/akun3.png" alt="Akun Free Fire"></a>
-                <a href="beli-akun-valo.html" class="card-akun-img"><img src="images/akun4.png" alt="Akun Valorant"></a>
-                <a href="beli-akun-pubg.html" class="card-akun-img"><img src="images/akun5.png" alt="Akun pubg"></a>
+                <!-- Tambahkan id="akun_opbr_1", id="akun_ml_1", dll -->
+                <a href="beli-akun-opbr.html" class="card-akun-img" id="akun_opbr_1"><img src="images/akun1.png" alt="Akun OPBR"></a>
+                <a href="beli-akun-ml.html" class="card-akun-img" id="akun_ml_1"><img src="images/akun2.png" alt="Akun MLBB"></a>
+                <a href="beli-akun-ff.html" class="card-akun-img" id="akun_ff_1"><img src="images/akun3.png" alt="Akun Free Fire"></a>
+                <a href="beli-akun-valo.html" class="card-akun-img" id="akun_valo_1"><img src="images/akun4.png" alt="Akun Valorant"></a>
+                <a href="beli-akun-pubg.html" class="card-akun-img" id="akun_pubg_1"><img src="images/akun5.png" alt="Akun pubg"></a>
+            </div>
         </section>
 
         <section class="section">
@@ -76,8 +79,10 @@
         </section>
 
     </main>
+    <div id="tempat-footer"></div>
     <script src="load-header.js"></script>
     <script src="script.js"></script>
+    <script src="load-footer.js"></script>
 
     <script>
         function bukaTopup(idGame) {

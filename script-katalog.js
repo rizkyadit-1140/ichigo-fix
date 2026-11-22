@@ -1,27 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Sekarang yang dicari adalah kotaknya, bukan tombolnya
+function sembunyikanAkunTerjual() {
     const semuaKartuProduk = document.querySelectorAll('.card-katalog-item');
+    const akunTerjual = JSON.parse(localStorage.getItem('akun_terjual')) || [];
 
     semuaKartuProduk.forEach(kartu => {
+        const kode = kartu.getAttribute('data-kode');
+        if (akunTerjual.includes(kode)) {
+            kartu.remove(); // Langsung hapus dari layar
+        }
+    });
+}
+
+// Jalankan saat halaman pertama kali dibuka
+document.addEventListener('DOMContentLoaded', () => {
+    sembunyikanAkunTerjual();
+
+    const semuaKartuProduk = document.querySelectorAll('.card-katalog-item');
+    semuaKartuProduk.forEach(kartu => {
         kartu.addEventListener('click', function() {
-            // 2. Ambil data dari kotak yang diklik
-            const judul = this.getAttribute('data-judul');
-            const harga = this.getAttribute('data-harga');
             const kode = this.getAttribute('data-kode');
-            const gambar = this.getAttribute('data-gambar');
-            const gambarSS = this.getAttribute('data-gambarss');
-            const spek = this.getAttribute('data-spek');
+            const akunTerjual = JSON.parse(localStorage.getItem('akun_terjual')) || [];
 
-            // 3. Simpan ke memori
-            localStorage.setItem('simpan_judul', judul);
-            localStorage.setItem('simpan_harga', harga);
+            // Cek sekali lagi sebelum pindah ke checkout
+            if (akunTerjual.includes(kode)) {
+                alert('⚠️ Maaf, akun ini baru saja terjual!');
+                this.remove();
+                return;
+            }
+
+            localStorage.setItem('simpan_judul', this.getAttribute('data-judul'));
+            localStorage.setItem('simpan_harga', this.getAttribute('data-harga'));
             localStorage.setItem('simpan_kode', kode);
-            localStorage.setItem('simpan_gambar', gambar);
-            localStorage.setItem('simpan_gambar_ss', gambarSS);
-            localStorage.setItem('simpan_spek', spek);
+            localStorage.setItem('simpan_gambar', this.getAttribute('data-gambar'));
+            localStorage.setItem('simpan_gambar_ss', this.getAttribute('data-gambarss'));
+            localStorage.setItem('simpan_spek', this.getAttribute('data-spek'));
 
-            // 4. Pindah halaman
             window.location.href = 'checkout-akun.html';
         });
     });
+});
+
+// TANGKAP TOMBOL BACK MOUSE (bfcache)
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        sembunyikanAkunTerjual();
+    }
 });

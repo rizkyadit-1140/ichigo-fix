@@ -943,3 +943,47 @@ main {
 
 .register-link { text-align: center; font-size: 12px; color: #000; }
 .register-link a { color: #cc0000; text-decoration: underline; }
+
+/* --- FOOTER GLOBAL --- */
+.footer-checkout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: #110202;
+    border-top: 1px solid #3d0a0a;
+    padding: 40px 50px;
+    gap: 20px;
+    color: #f5f5dc;
+}
+.footer-col h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.brand-col { text-align: center; }
+.footer-logo { height: 40px; margin-bottom: 10px; }
+.brand-col p { margin: 0; font-weight: bold; font-size: 1.1rem; }
+.brand-col small { color: #666; }
+.social-icons span {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.pay-icons-footer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.pay-icons-footer img { height: 25px; border-radius: 3px; }
+.contact-col p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+@media (max-width: 900px) {
+    .footer-checkout { grid-template-columns: 1fr 1fr; padding: 30px 20px; }
+}
+@media (max-width: 500px) {
+    .footer-checkout { grid-template-columns: 1fr; }
+}
+
