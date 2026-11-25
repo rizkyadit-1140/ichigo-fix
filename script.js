@@ -85,16 +85,8 @@ slideImages.forEach(img => {
     img.addEventListener('dragstart', (e) => e.preventDefault());
 });
 
-// 2. Untuk Layar Sentuh (HP)
-sliderContainer.addEventListener('touchstart', e => {
-    startX = e.changedTouches[0].screenX;
-});
-sliderContainer.addEventListener('touchend', e => {
-    endX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
 
-// 3. Untuk Mouse (PC)
+// 3. Untuk Mouse 
 sliderContainer.addEventListener('mousedown', e => {
     isDragging = true;
     startX = e.screenX;
@@ -180,56 +172,3 @@ scrollAreas.forEach(area => {
     });
 });
 });
-// ==========================================
-// FITUR RIWAYAT & AKUN GAIB (SOLD OUT)
-// ==========================================
-
-// 1. Sembunyikan akun yang sudah laku saat halaman dimuat
-document.addEventListener("DOMContentLoaded", () => {
-    // Cek daftar akun yang sudah terjual dari brankas browser
-    let akunTerjual = JSON.parse(localStorage.getItem('ichigo_akun_terjual')) || [];
-    
-    // Cari dan sembunyikan semua kotak akun yang ID-nya ada di daftar laku
-    akunTerjual.forEach(idAkunLaku => {
-        let elemenAkun = document.getElementById(idAkunLaku);
-        if (elemenAkun) {
-            elemenAkun.style.display = 'none'; // Hilangkan dari layar!
-        }
-    });
-});
-
-// 2. Fungsi ini dipanggil saat pembeli mengeklik "Beli Sekarang" di halaman detail akun
-// Fungsi ini dipanggil saat pembeli mengeklik "Checkout" di halaman detail akun
-function prosesBeliAkun(idAkun, namaAkun, harga) {
-    // 1. BACA EMAIL SAAT TOMBOL DIKLIK
-    let inputEmail = document.getElementById('email-pembeli');
-    
-    // Cek apakah elemen email ada, dan apakah isinya kosong
-    if (inputEmail && inputEmail.value.trim() === "") {
-        alert("Harap isi Email!");
-        return; // Hentikan proses sampai sini kalau kosong
-    }
-
-    // 2. MASUKKAN KE DAFTAR "RIWAYAT TRANSAKSI"
-    let riwayat = JSON.parse(localStorage.getItem('ichigo_riwayat_transaksi')) || [];
-    let transaksiBaru = {
-        item: namaAkun,
-        harga: harga,
-        tanggal: new Date().toLocaleDateString(),
-        status: "Selesai"
-    };
-    riwayat.push(transaksiBaru);
-    localStorage.setItem('ichigo_riwayat_transaksi', JSON.stringify(riwayat));
-
-    // 3. MASUKKAN KE DAFTAR "AKUN TERJUAL" (Agar gaib dari etalase)
-    let akunTerjual = JSON.parse(localStorage.getItem('ichigo_akun_terjual')) || [];
-    if (!akunTerjual.includes(idAkun)) {
-        akunTerjual.push(idAkun);
-    }
-    localStorage.setItem('ichigo_akun_terjual', JSON.stringify(akunTerjual));
-
-    alert("Checkout Berhasil!\nDetail akun telah dikirim ke email: " + inputEmail.value + "\nAkun ini sekarang sudah gaib dari etalase.");
-    
-    // Kembalikan pembeli ke halaman utama
-    window.location.href = "ichigo_store_website.html";
-}

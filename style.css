@@ -97,8 +97,6 @@ body {
 }
 
 /* --- Banner --- */
-/* --- Banner Slider (Centered / Carousel Mengintip) --- */
-/* --- Banner Slider (3D Infinite Carousel) --- */
 .banner-slider {
     width: 100%;
     max-width: 1200px;
@@ -1050,13 +1048,7 @@ main {
     color: #ffffff;
 }
 
-@media (max-width: 900px) {
-    .footer-checkout { grid-template-columns: 1fr 1fr; padding: 35px 25px; }
-}
 
-@media (max-width: 550px) {
-    .footer-checkout { grid-template-columns: 1fr; }
-}
 .social-item i {
     width: 22px;
     text-align: center;

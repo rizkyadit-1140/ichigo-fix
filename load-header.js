@@ -116,7 +116,6 @@ function inisialisasiModalLogin() {
     const authEmail = document.getElementById('auth-email');
     const authPassword = document.getElementById('auth-password');
     const btnSubmitAuth = document.getElementById('btn-submit-auth');
-    const forgotPwLink = document.getElementById('forgot-pw-link');
     const authSwitchText = document.getElementById('auth-switch-text');
     const authSwitchLink = document.getElementById('auth-switch-link');
 
@@ -164,13 +163,11 @@ function inisialisasiModalLogin() {
             if (isLoginMode) {
                 authTitle.innerText = "Login";
                 btnSubmitAuth.innerText = "Masuk";
-                forgotPwLink.style.display = "block";
                 authSwitchText.childNodes[0].nodeValue = "Belum punya akun? ";
                 authSwitchLink.innerText = "Daftar sekarang";
             } else {
                 authTitle.innerText = "Daftar Akun";
                 btnSubmitAuth.innerText = "Daftar";
-                forgotPwLink.style.display = "none"; // Sembunyikan lupa password saat daftar
                 authSwitchText.childNodes[0].nodeValue = "Sudah punya akun? ";
                 authSwitchLink.innerText = "Masuk di sini";
             }
