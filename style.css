@@ -1016,11 +1016,6 @@ main {
     flex-shrink: 0;
 }
 
-.social-item:hover {
-    color: #ffcc00;
-    transform: translateX(4px);
-}
-
 /* Kolom 3: Pembayaran (Susunan 2 atas, 1 bawah kiri) */
 .pay-icons-footer {
     display: grid;
