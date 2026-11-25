@@ -6,6 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.text())
             .then(data => {
                 tempatHeader.innerHTML = data;
+                document.querySelectorAll('.nav-scroll-link').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('data-target');
+                        const elemenTujuan = document.getElementById(targetId);
+
+                        // Jika elemen tujuan ada di halaman yang sedang dibuka sekarang, langsung scroll halus!
+                        if (elemenTujuan) {
+                            e.preventDefault();
+                            elemenTujuan.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
                 
                 // === INISIALISASI MESIN PENCARI SETELAH HEADER DIMUAT ===
                 inisialisasiPencarianLive();
@@ -34,7 +46,7 @@ function inisialisasiPencarianLive() {
         { judul: "Free Fire (FF)", tipe: "Beli Akun", gambar: "images/akun3.png", aksi: "link", url: "beli-akun-ff.html" },
         { judul: "PUBG Mobile", tipe: "Beli Akun", gambar: "images/akun5.png", aksi: "link", url: "beli-akun-pubg.html" },
         { judul: "Valorant", tipe: "Beli Akun", gambar: "images/akun4.png", aksi: "link", url: "beli-akun-valo.html" },
-        { judul: "One Piece Bounty Rush (OPBR)`", tipe: "Beli Akun", gambar: "images/akun1.png", aksi: "link", url: "beli-akun-opbr.html" }
+        { judul: "One Piece Bounty Rush (OPBR)", tipe: "Beli Akun", gambar: "images/akun1.png", aksi: "link", url: "beli-akun-opbr.html" }
     ];
 
     // 2. LOGIKA MESIN PENCARI
