@@ -1,32 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const countdownElement = document.getElementById('countdown');
-    
-    if (countdownElement) {
-        // Atur waktu (misal: 23 jam 59 menit 59 detik)
-        let totalSeconds = 23 * 3600 + 59 * 60 + 59;
-        
-        const updateCountdown = () => {
-            if (totalSeconds <= 0) {
-                countdownElement.textContent = "00:00:00";
-                return;
-            }
-            
-            // Konversi dari detik ke Jam, Menit, Detik
-            const hours = Math.floor(totalSeconds / 3600);
-            const minutes = Math.floor((totalSeconds % 3600) / 60);
-            const seconds = totalSeconds % 60;
-            
-            // Format agar selalu 2 digit (misal: 09 bukan 9)
-            const formatTime = (time) => time.toString().padStart(2, '0');
-            
-            countdownElement.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
-            totalSeconds--;
-        };
-        
-        // Update setiap 1000 milidetik (1 detik)
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
     // --- Logika Banner Slider ---
 // --- Logika Banner Slider Lengkap ---
 const sliderContainer = document.getElementById('sliderContainer');
