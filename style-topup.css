@@ -33,7 +33,11 @@
 .pay-methods { flex: 2; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: start; }
 .pay-card { background-color: #5a151b; border: 1px solid #7a1b22; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .pay-card:hover, .pay-card.active { border-color: #ffae00; }
-.pay-card img { width: 30px; background: #fff; border-radius: 5px; padding: 2px; }
+.pay-card img {
+    width: 45px;
+    height: auto;
+    object-fit: contain;
+}
 .pay-info h4 { font-size: 12px; }
 .pay-info p { font-size: 11px; color: #ffae00; }
 
