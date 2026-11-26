@@ -241,6 +241,7 @@ main {
 
 .section {
     margin-top: 40px;
+    scroll-margin-top: 100px; /* Memberi jarak aman di bawah header fixed saat di-scroll */
 }
 
 /* --- Modifikasi Area Judul & Pita (Ribbon) --- */
